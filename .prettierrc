@@ -1,0 +1,14 @@
+{
+	"endOfLine": "auto",
+	"tabWidth": 4,
+	"useTabs": true,
+	"singleAttributePerLine": true,
+	"overrides": [
+		{
+			"files": "*.html",
+			"options": {
+				"parser": "html"
+			}
+		}
+	]
+}

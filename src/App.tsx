@@ -1,45 +1,25 @@
 import './App.css';
 
-import React from 'react';
+import { CreateTodoButton } from './CreateTodoButton';
+import { TodoCounter } from './TodoCounter';
+import { TodoItem } from './TodoItem';
+import { TodoList } from './TodoList';
+import { TodoSearch } from './TodoSearch';
 
 function App(): React.JSX.Element {
 	return (
 		<div className="App">
 			<TodoCounter />
-			{/* <TodoSearch /> */}
+			<TodoSearch />
 
-			{/* <TodoList> */}
-			<TodoItem />
-			<TodoItem />
-			<TodoItem />
-			{/* </TodoList> */}
+			<TodoList>
+				<TodoItem />
+				<TodoItem />
+				<TodoItem />
+			</TodoList>
 
-			{/* <CreateTodoButton /> */}
+			<CreateTodoButton />
 		</div>
-	);
-}
-
-function TodoItem(): React.JSX.Element {
-	return (
-		<li>
-			<label>
-				<input type="checkbox" />
-				<span>Texto de ejemplo</span>
-			</label>
-			<button type="button">Eliminar</button>
-		</li>
-	);
-}
-
-function TodoCounter(): React.JSX.Element {
-	return (
-		<li>
-			<label>
-				<input type="checkbox" />
-				<span>Texto de ejemplo</span>
-			</label>
-			<button type="button">Eliminar</button>
-		</li>
 	);
 }
 

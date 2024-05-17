@@ -1,5 +1,15 @@
-function TodoCounter(): JSX.Element {
-	return <h1>Has completado 3 de 5 TODOs</h1>;
+function TodoCounter({
+	total,
+	completed,
+}: {
+	total: number;
+	completed: number;
+}): JSX.Element {
+	return (
+		<h1>
+			Has completado {total} de {completed} TODOs
+		</h1>
+	);
 }
 
 export { TodoCounter };

@@ -1,7 +1,5 @@
-import { PropsWithChildren } from 'react';
-
-function TodoList(props: PropsWithChildren): JSX.Element {
-	return <ul>{props.children}</ul>;
+function TodoList({ children }: { children: React.ReactNode }): JSX.Element {
+	return <ul>{children}</ul>;
 }
 
 export { TodoList };

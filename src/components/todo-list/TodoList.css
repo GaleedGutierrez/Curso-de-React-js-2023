@@ -1,0 +1,5 @@
+.m-todo-list {
+	border-start-start-radius: var(--border-radius-1);
+	border-start-end-radius: var(--border-radius-1);
+	background-color: var(--background-color-1);
+}

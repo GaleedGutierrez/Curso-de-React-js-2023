@@ -1,0 +1,17 @@
+.text-color-2 {
+	color: var(--text-color-2);
+}
+
+.text-hover {
+	@media (hover: hover) {
+		&:hover {
+			color: var(--text-color-hover);
+		}
+	}
+}
+
+.text-active {
+	&:active {
+		color: var(--text-color-active);
+	}
+}

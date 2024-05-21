@@ -1,0 +1,72 @@
+:root {
+	/* Primary */
+	--bright-blue: oklch(61.36% 0.205 262.21);
+	--magenta: oklch(65.54% 0.231 312.45);
+	--cyan: oklch(83.81% 0.124 217.53);
+	--check-background: linear-gradient(
+		-45deg,
+		var(--magenta) 0%,
+		var(--cyan) 100%
+	);
+	--pure-white: oklch(100% 0 0);
+	--pure-black: oklch(0% 0 0);
+	--pure-black-50per: oklch(0% 0 0 / 50%);
+
+	/* Light Theme */
+	--very-light-gray: oklch(98.48% 0 0);
+	--very-light-grayish-blue: oklch(92.42% 0.017 282.79);
+	--light-grayish-blue: oklch(86.76% 0.011 280.13);
+	--dark-grayish-blue: oklch(67.04% 0.025 282.46);
+	--very-dark-grayish-blue: oklch(42.39% 0.052 279.93);
+
+	/* Dark Theme */
+	--very-dark-blue: oklch(20.95% 0.021 280.33);
+	--very-dark-desaturated-blue: oklch(28.02% 0.039 279.54);
+	--dt-light-grayish-blue: oklch(85.38% 0.037 280.55);
+	--dt-light-grayish-blue-50per: oklch(85.38% 0.037 280.55 / 50%);
+	--light-grayish-blue-hover: oklch(92.42% 0.017 282.79);
+	--dt-dark-grayish-blue: oklch(58.53% 0.037 280.19);
+	--dt-very-dark-grayish-blue: oklch(43.62% 0.037 278.88);
+	--very-dark-grayish-blue-2: oklch(35.47% 0.031 282.36);
+
+	/* Shadow */
+	--shadow-1: 0 3.5rem 5rem -1.5rem light-dark(var(--dt-light-grayish-blue-50per), var(--pure-black-50per));
+	--shadow-2: 0 -4rem 5rem -1.5rem
+		light-dark(var(--dt-light-grayish-blue-50per), var(--pure-black-50per));
+
+	/* Text */
+	--text-color: light-dark(
+		var(--very-dark-grayish-blue),
+		var(--dt-light-grayish-blue)
+	);
+	--text-color-2: light-dark(
+		var(--dark-grayish-blue),
+		var(--dt-very-dark-grayish-blue)
+	);
+	--text-color-hover: light-dark(
+		var(--very-dark-grayish-blue),
+		var(--light-grayish-blue-hover)
+	);
+	--text-color-active: var(--bright-blue);
+	--text-color-link: light-dark(
+		var(--dark-grayish-blue),
+		var(--dt-very-dark-grayish-blue)
+	);
+	--text-color-link-hover: light-dark(
+		var(--very-dark-grayish-blue),
+		var(--light-grayish-blue-hover)
+	);
+	--text-color-link-active: var(--bright-blue);
+
+	/* Background */
+	--background-color-1: light-dark(
+		var(--pure-white),
+		var(--very-dark-desaturated-blue)
+	);
+	--background-color-2: light-dark(
+		var(--very-light-gray),
+		var(--very-dark-blue)
+	);
+
+	color-scheme: light dark;
+}

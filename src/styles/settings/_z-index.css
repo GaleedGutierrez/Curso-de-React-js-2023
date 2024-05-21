@@ -1,0 +1,58 @@
+/* stylelint-disable custom-property-pattern */
+:root {
+	/* Z-Index Scale (private vars) */
+
+	/* ------------------------- */
+	--_z-index-1: 1;
+	--_z-index-2: 2;
+	--_z-index-3: 3;
+	--_z-index-4: 4;
+	--_z-index-5: 5;
+	--_z-index-6: 6;
+	--_z-index-7: 7;
+	--_z-index-8: 8;
+	--_z-index-9: 9;
+	--_z-index-10: 10;
+
+	/* Z-Index Applications */
+
+	/* ------------------------- */
+	--z-index-1-screen-foreground: var(--_z-index-1);
+	--z-index-1-follow-up-visibility: var(--_z-index-1);
+	--z-index-1-prl-welcome: var(--_z-index-1);
+	--z-index-1-app-image-dropdown: var(--_z-index-1);
+	--z-index-1-surface-under: var(--_z-index-1);
+	--z-index-1-block-group: var(--_z-index-1);
+	--z-index-2-surface-over: var(--_z-index-2);
+	--z-index-2-image-picker-control: var(--_z-index-2);
+	--z-index-2-collection-card-button: var(--_z-index-2);
+	--z-index-2-block-group-button-group: var(--_z-index-2);
+	--z-index-2-block-group-focused: var(--_z-index-2);
+	--z-index-2-block-group-overlay: var(--_z-index-2);
+	--z-index-3-caption: var(--_z-index-3);
+	--z-index-3-block-insert-control: var(--_z-index-3);
+	--z-index-5-figure-overlay: var(--_z-index-5);
+	--z-index-5-highlight-menu: var(--_z-index-5);
+	--z-index-5-metabar: var(--_z-index-5);
+	--z-index-5-profile-avatar: var(--_z-index-5);
+	--z-index-5-note-recommendations: var(--_z-index-5);
+	--z-index-5-collection-logo: var(--_z-index-5);
+	--z-index-6-matter-logo: var(--_z-index-6);
+	--z-index-6-editor-sidebar: var(--_z-index-6);
+	--z-index-6-nav-overlay: var(--_z-index-6);
+	--z-index-7-nav: var(--_z-index-7);
+	--z-index-8-transitioning-container: var(--_z-index-8);
+	--z-index-8-panel: var(--_z-index-8);
+	--z-index-8-butter-bar: var(--_z-index-8);
+	--z-index-8-loading-bar: var(--_z-index-8);
+	--z-index-8-zoom-overlay: var(--_z-index-8);
+	--z-index-9-zoom-overlay-target: var(--_z-index-9);
+	--z-index-9-nav-overlay-touch: var(--_z-index-9);
+	--z-index-9-overlay: var(--_z-index-9);
+	--z-index-9-dialog: var(--_z-index-9);
+	--z-index-9-tooltip: var(--_z-index-9);
+	--z-index-9-accessibility: var(--_z-index-9);
+
+	/* Z index para debugging */
+	--z-index-10-dev: var(--_z-index-10);
+}

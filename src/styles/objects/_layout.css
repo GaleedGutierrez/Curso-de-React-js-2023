@@ -1,0 +1,12 @@
+.o-flex-x-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+.o-margin-x-auto {
+	margin-inline: auto;
+}
+
+.o-width-100per {
+	inline-size: 100%;
+}

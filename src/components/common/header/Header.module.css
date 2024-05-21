@@ -1,0 +1,15 @@
+.g-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	inline-size: 88%;
+	max-inline-size: 54rem;
+	margin-block: 4.8rem 4rem;
+	margin-inline: auto;
+
+	.g-header__title {
+		margin: 0;
+		color: var(--pure-white);
+		letter-spacing: 12px;
+	}
+}

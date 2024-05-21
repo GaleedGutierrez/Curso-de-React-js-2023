@@ -1,0 +1,47 @@
+.a-checkbox {
+	display: flex;
+
+	&::before {
+		display: inline-block;
+		block-size: 2rem;
+		inline-size: 2rem;
+		border: var(--border-025) solid transparent;
+		border-radius: var(--border-radius-circle);
+		background-image: linear-gradient(
+				light-dark(var(--very-light-gray), var(--very-dark-blue)),
+				light-dark(var(--very-light-gray), var(--very-dark-blue))
+			),
+			radial-gradient(
+				circle at top left,
+				light-dark(
+					var(--very-light-grayish-blue),
+					var(--very-dark-grayish-blue-2)
+				),
+				light-dark(
+					var(--very-light-grayish-blue),
+					var(--very-dark-grayish-blue-2)
+				)
+			);
+		background-clip: content-box, border-box;
+		background-origin: border-box;
+		content: "";
+	}
+
+	&:has(input[type="checkbox"]:checked)::before {
+		border: none;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='9'%3E%3Cpath fill='none' stroke='%23FFF' stroke-width='2' d='M1 4.304L3.696 7l6-6'/%3E%3C/svg%3E"),
+			var(--check-background);
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	@media (hover: hover) {
+		&:hover::before {
+			background-image: linear-gradient(
+					light-dark(var(--very-light-gray), var(--very-dark-blue)),
+					light-dark(var(--very-light-gray), var(--very-dark-blue))
+				),
+				radial-gradient(circle at top left, var(--cyan), var(--magenta));
+		}
+	}
+}

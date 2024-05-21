@@ -1,0 +1,70 @@
+/* Custom Properties */
+@import url("./settings/_variables.css");
+
+/* Generic */
+@import url("./generic/_normalize.css");
+@import url("./generic/_light-reset.css");
+
+/* Elements */
+@import url("./elements/_body.css");
+@import url("./elements/_headings.css");
+@import url("./elements/_html.css");
+@import url("./elements/_link.css");
+@import url("./elements/_paragraph.css");
+
+/* Mixins */
+@import url("./tools/_mixins.css");
+
+/* Objects */
+@import url("./objects/_layout.css");
+@import url("./objects/_padding.css");
+@import url("./objects/_border.css");
+
+/* @import url("./objects/_scroll-margin.css");
+@import url("./objects/_container.css");
+@import url("./objects/_ui-list.css"); */
+
+/* Utilities */
+@import url("./utilities/_animation.css");
+@import url("./utilities/_sr-only.css");
+@import url("./utilities/_skip-link.css");
+@import url("./utilities/_visibility.css");
+@import url("./utilities/_text.css");
+@import url("./utilities/_background.css");
+
+/* Atoms */
+@import url("../components/ui/atoms/_checkbox.css");
+
+/* Molecules */
+
+/* Organisms */
+
+body {
+	background-image: url("../assets/images/bg-mobile-light.jpg");
+	background-repeat: no-repeat;
+	background-position-y: top;
+	background-size: 100% 200px;
+
+	@media (prefers-color-scheme: dark) {
+		background-image: url("../assets/images/bg-mobile-dark.jpg");
+	}
+
+	@media screen and (width >= 48rem) {
+		background-image: url("../assets/images/bg-desktop-light.jpg");
+		background-size: 100% 300px;
+
+		@media (prefers-color-scheme: dark) {
+			background-image: url("../assets/images/bg-desktop-dark.jpg");
+		}
+	}
+}
+
+.a-drag-and-drop {
+	margin-block-start: calc(8.4rem + var(--space-10));
+	color: var(--text-color-2);
+	text-align: center;
+
+	@media screen and (width >= 38.375rem) {
+		margin-block-start: var(--space-12);
+	}
+}

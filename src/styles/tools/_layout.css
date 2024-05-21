@@ -1,0 +1,28 @@
+.center-flex-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.margin-block-1p6rem {
+	margin-block: 1.6rem 1.6rem;
+}
+
+.max-width-desktop {
+	max-width: var(--max-width-1);
+	margin-inline: auto;
+}
+
+.center-position-absolute {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}

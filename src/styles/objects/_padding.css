@@ -1,0 +1,7 @@
+.o-padding-x-5 {
+	padding-inline: var(--space-5);
+}
+
+.o-padding-y-4 {
+	padding-block: var(--space-4);
+}

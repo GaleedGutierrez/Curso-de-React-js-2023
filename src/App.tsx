@@ -1,12 +1,12 @@
-import './App.css';
-
 import React from 'react';
 
-import { CreateTodoButton } from './CreateTodoButton';
-import { TodoCounter } from './TodoCounter';
-import { TodoItem } from './TodoItem';
-import { TodoList } from './TodoList';
-import { TodoSearch } from './TodoSearch';
+import styles from './App.module.css';
+import { Header } from './components/common/header/Header';
+import { TodoBoxStatus } from './components/todo-box-status/TodoBoxStatus';
+import { TodoDragAndDrop } from './components/todo-drag-and-drop/TodoDragAndDrop';
+import { TodoItem } from './components/todo-item/TodoItem';
+import { TodoList } from './components/todo-list/TodoList';
+import { TodoSearch } from './components/todo-search/TodoSearch';
 import { Item } from './types/interfaces';
 
 const DEFAULT_TODOS: Item[] = [
@@ -19,25 +19,29 @@ const DEFAULT_TODOS: Item[] = [
 
 function App(): React.JSX.Element {
 	return (
-		<React.Fragment>
-			<TodoCounter
+		<>
+			<Header />
+			{/* <TodoCounter
 				completed={16}
 				total={25}
-			/>
-			<TodoSearch />
-
-			<TodoList>
-				{DEFAULT_TODOS.map(({ text, completed }) => (
-					<TodoItem
-						key={text}
-						text={text}
-						completed={completed}
-					/>
-				))}
-			</TodoList>
-
-			<CreateTodoButton />
-		</React.Fragment>
+			/> */}
+			<main>
+				<TodoSearch />
+				<section className={styles['g-todo-container']}>
+					<TodoList>
+						{DEFAULT_TODOS.map(({ text, completed }) => (
+							<TodoItem
+								key={text}
+								text={text}
+								completed={completed}
+							/>
+						))}
+					</TodoList>
+					<TodoBoxStatus />
+				</section>
+				<TodoDragAndDrop />
+			</main>
+		</>
 	);
 }
 

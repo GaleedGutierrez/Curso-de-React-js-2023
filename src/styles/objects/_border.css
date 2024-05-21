@@ -1,0 +1,4 @@
+.o-border-radius-y-end {
+	border-end-start-radius: var(--border-radius-1);
+	border-end-end-radius: var(--border-radius-1);
+}

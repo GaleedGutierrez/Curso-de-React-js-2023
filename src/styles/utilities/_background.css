@@ -1,0 +1,6 @@
+.background-ld-white-dark-desaturated-blue {
+	background-color: light-dark(
+		var(--pure-white),
+		var(--very-dark-desaturated-blue)
+	);
+}

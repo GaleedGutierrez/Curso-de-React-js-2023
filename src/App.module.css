@@ -1,0 +1,13 @@
+.g-todo-container {
+	inline-size: 88%;
+	max-inline-size: 54rem;
+	border-end-start-radius: var(--border-radius-1);
+	border-end-end-radius: var(--border-radius-1);
+	margin-inline: auto;
+	box-shadow: var(--shadow-1);
+	margin-block-start: var(--space-4);
+
+	@media screen and (width >= 38.375rem) {
+		margin-block-start: var(--space-6);
+	}
+}

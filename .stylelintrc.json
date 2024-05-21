@@ -23,6 +23,7 @@
 			"lab",
 			"hwb"
 		],
+		"hue-degree-notation": "number",
 		"order/order": [
 			"custom-properties",
 			"dollar-variables",
@@ -423,6 +424,8 @@
 			"fill-rule",
 			"clip-rule",
 			"stroke",
+			"caret-color",
+			"caret-shape",
 
 			"scrollbar-gutter"
 		],

@@ -2,8 +2,9 @@ export function MoonIcon(): JSX.Element {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			width="26"
-			height="26"
+			width="2.6rem"
+			height="2.6rem"
+			className="a-icon"
 		>
 			<path
 				fill="#FFF"

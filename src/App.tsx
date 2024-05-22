@@ -5,7 +5,7 @@ import { Header } from './components/common/header/Header';
 import { TodoBoxStatus } from './components/todo-box-status/TodoBoxStatus';
 import { TodoItem } from './components/todo-item/TodoItem';
 import { TodoList } from './components/todo-list/TodoList';
-import { TodoSearch } from './components/todo-search/TodoSearch';
+import { TodoAddNewTask, TodoClick } from './components/todo-search/TodoSearch';
 import { Item } from './types/interfaces';
 
 const DEFAULT_TODOS: Item[] = [
@@ -21,7 +21,7 @@ function App(): React.JSX.Element {
 		<div className={styles['app-container']}>
 			<Header />
 			<main>
-				<TodoSearch />
+				<TodoAddNewTask />
 				<section className={styles['g-todo-container']}>
 					<TodoList>
 						{DEFAULT_TODOS.map(({ text, completed }) => (
@@ -38,6 +38,7 @@ function App(): React.JSX.Element {
 					Drag and drop to reorder list
 				</p>
 			</main>
+			<TodoClick />
 		</div>
 	);
 }

@@ -34,14 +34,25 @@
 		background-repeat: no-repeat;
 		background-position: center;
 	}
+}
 
-	@media (hover: hover) {
-		&:hover::before {
-			background-image: linear-gradient(
-					light-dark(var(--very-light-gray), var(--very-dark-blue)),
-					light-dark(var(--very-light-gray), var(--very-dark-blue))
-				),
-				radial-gradient(circle at top left, var(--cyan), var(--magenta));
-		}
+@media (hover: hover) {
+	.a-checkbox:hover::before {
+		background-image: linear-gradient(
+				light-dark(var(--very-light-gray), var(--very-dark-blue)),
+				light-dark(var(--very-light-gray), var(--very-dark-blue))
+			),
+			radial-gradient(circle at top left, var(--cyan), var(--magenta));
+	}
+}
+
+.a-checkbox:has(input[type="checkbox"]:focus-visible)::before {
+	outline: var(--border-1) solid var(--bright-blue-accessibility);
+	outline-offset: 0.4rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	.a-checkbox:has(input[type="checkbox"]:focus-visible)::before {
+		outline-color: var(--cyan-accessibility);
 	}
 }

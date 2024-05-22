@@ -7,6 +7,18 @@
 	.g-header__title {
 		margin: 0;
 		color: var(--pure-white);
-		letter-spacing: 12px;
+		letter-spacing: 1.2rem;
+	}
+
+	button {
+		&:focus-within {
+			border-radius: var(--border-radius-1);
+			outline: var(--bright-blue-accessibility) solid var(--border-1);
+			outline-offset: 0.4rem;
+
+			@media (prefers-color-scheme: dark) {
+				outline-color: var(--cyan-accessibility);
+			}
+		}
 	}
 }

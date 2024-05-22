@@ -7,7 +7,10 @@ export function Header(): JSX.Element {
 	return (
 		<header className={styles['g-header']}>
 			<h1 className={styles['g-header__title']}>TODO</h1>
-			<button className={styles['g-header__theme-icon']}>
+			<button
+				className={styles['g-header__theme-icon']}
+				aria-label="Change theme"
+			>
 				{isThemeBrowserDark() ? <SunIcon /> : <MoonIcon />}
 			</button>
 		</header>

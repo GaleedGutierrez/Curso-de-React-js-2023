@@ -24,6 +24,7 @@ function TodoItem({ text, completed }: Item): JSX.Element {
 			<button
 				type="button"
 				className="m-todo-item__close-button"
+				aria-label="Delete task"
 				onClick={(event) => {
 					// eslint-disable-next-line no-console
 					console.log('Click en eliminar');
@@ -35,8 +36,9 @@ function TodoItem({ text, completed }: Item): JSX.Element {
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="18"
-					height="18"
+					width="1.8rem"
+					height="1.8rem"
+					className="a-icon"
 				>
 					<path
 						fill="#494C6B"

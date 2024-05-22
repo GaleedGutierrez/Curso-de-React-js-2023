@@ -16,6 +16,7 @@
 @import url("./tools/_mixins.css");
 
 /* Objects */
+@import url("./objects/_container.css");
 @import url("./objects/_layout.css");
 @import url("./objects/_padding.css");
 @import url("./objects/_border.css");
@@ -56,15 +57,5 @@ body {
 		@media (prefers-color-scheme: dark) {
 			background-image: url("../assets/images/bg-desktop-dark.jpg");
 		}
-	}
-}
-
-.a-drag-and-drop {
-	margin-block-start: calc(8.4rem + var(--space-10));
-	color: var(--text-color-2);
-	text-align: center;
-
-	@media screen and (width >= 38.375rem) {
-		margin-block-start: var(--space-12);
 	}
 }

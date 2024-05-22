@@ -1,13 +1,33 @@
-.g-todo-container {
+.app-container {
+	display: grid;
+	gap: var(--space-10);
 	inline-size: 88%;
 	max-inline-size: 54rem;
+	margin-inline: auto;
+	margin-block-start: 4.8rem;
+
+	@media screen and (width >= 38.375rem) {
+		gap: var(--space-12);
+	}
+}
+
+.g-todo-container {
 	border-end-start-radius: var(--border-radius-1);
 	border-end-end-radius: var(--border-radius-1);
-	margin-inline: auto;
 	box-shadow: var(--shadow-1);
 	margin-block-start: var(--space-4);
 
 	@media screen and (width >= 38.375rem) {
 		margin-block-start: var(--space-6);
+	}
+}
+
+.app-container__drag-and-drop {
+	margin-block-start: calc(8.4rem + var(--space-10));
+	color: var(--text-color-2);
+	text-align: center;
+
+	@media screen and (width >= 38.375rem) {
+		margin-block-start: var(--space-12);
 	}
 }

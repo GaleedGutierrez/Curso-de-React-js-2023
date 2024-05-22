@@ -2,10 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	inline-size: 88%;
-	max-inline-size: 54rem;
-	margin-block: 4.8rem 4rem;
-	margin-inline: auto;
+	inline-size: 100%;
 
 	.g-header__title {
 		margin: 0;

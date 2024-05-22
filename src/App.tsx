@@ -3,7 +3,6 @@ import React from 'react';
 import styles from './App.module.css';
 import { Header } from './components/common/header/Header';
 import { TodoBoxStatus } from './components/todo-box-status/TodoBoxStatus';
-import { TodoDragAndDrop } from './components/todo-drag-and-drop/TodoDragAndDrop';
 import { TodoItem } from './components/todo-item/TodoItem';
 import { TodoList } from './components/todo-list/TodoList';
 import { TodoSearch } from './components/todo-search/TodoSearch';
@@ -19,12 +18,8 @@ const DEFAULT_TODOS: Item[] = [
 
 function App(): React.JSX.Element {
 	return (
-		<>
+		<div className={styles['app-container']}>
 			<Header />
-			{/* <TodoCounter
-				completed={16}
-				total={25}
-			/> */}
 			<main>
 				<TodoSearch />
 				<section className={styles['g-todo-container']}>
@@ -39,9 +34,11 @@ function App(): React.JSX.Element {
 					</TodoList>
 					<TodoBoxStatus />
 				</section>
-				<TodoDragAndDrop />
+				<p className={styles['app-container__drag-and-drop']}>
+					Drag and drop to reorder list
+				</p>
 			</main>
-		</>
+		</div>
 	);
 }
 

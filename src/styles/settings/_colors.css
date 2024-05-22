@@ -1,8 +1,13 @@
 :root {
 	/* Primary */
 	--bright-blue: oklch(61.36% 0.205 262.21);
+	--bright-blue-accessibility: oklch(34.17% 0.162 262.32);
 	--magenta: oklch(65.54% 0.231 312.45);
 	--cyan: oklch(83.81% 0.124 217.53);
+	--cyan-accessibility: oklch(85.81% 0.124 217.53);
+	--outline-color: light-dark(
+		var(--bright-blue-accessibility) var(--cyan-accessibility)
+	);
 	--check-background: linear-gradient(
 		-45deg,
 		var(--magenta) 0%,

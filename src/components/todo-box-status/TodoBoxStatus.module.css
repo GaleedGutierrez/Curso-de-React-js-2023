@@ -8,6 +8,18 @@
 	border-end-start-radius: var(--border-radius-1);
 	border-end-end-radius: var(--border-radius-1);
 	background-color: var(--background-color-1);
+
+	button {
+		&:focus-visible {
+			border-radius: var(--border-radius-1);
+			outline: var(--bright-blue-accessibility) solid var(--border-1);
+			outline-offset: 0.4rem;
+
+			@media (prefers-color-scheme: dark) {
+				outline-color: var(--cyan-accessibility);
+			}
+		}
+	}
 }
 
 .m-box-status__filters {
@@ -37,6 +49,16 @@
 	/* stylelint-disable-next-line order/order */
 	&:active {
 		color: var(--text-color-link-active);
+	}
+
+	&:focus-visible {
+		border-radius: var(--border-radius-1);
+		outline: var(--bright-blue-accessibility) solid var(--border-1);
+		outline-offset: 0.4rem;
+
+		@media (prefers-color-scheme: dark) {
+			outline-color: var(--cyan-accessibility);
+		}
 	}
 }
 

@@ -1,27 +1,47 @@
+import { useState } from 'react';
+
 import styles from './TodoSearch.module.css';
 
-function TodoSearch(): JSX.Element {
+export function TodoAddNewTask(): JSX.Element {
+	const [searchValue, setSearchValue] = useState('');
+
+	// eslint-disable-next-line no-console
+	console.log('Los usuario buscan TODOs de: ', searchValue);
+
 	return (
-		<label className={styles['m-todo-search__container']}>
+		<label
+			className={styles['m-todo-search__container']}
+			htmlFor="new-todo"
+		>
 			<input
 				type="text"
-				placeholder="Create a new todo…"
+				placeholder="Create a new task…"
 				className={styles['m-todo-search__input']}
+				id="new-todo"
+				value={searchValue}
 				onChange={(event) => {
-					// eslint-disable-next-line no-console
-					console.group('Add new task/search task');
-					// eslint-disable-next-line no-console
-					console.log(event);
-					// eslint-disable-next-line no-console
-					console.log(event.target);
-					// eslint-disable-next-line no-console
-					console.log(event.target.value);
-					// eslint-disable-next-line no-console
-					console.groupEnd();
+					const VALUE = event.target.value;
+
+					setSearchValue(VALUE);
 				}}
 			/>
 		</label>
 	);
 }
 
-export { TodoSearch };
+export function TodoClick(): JSX.Element {
+	const [state, setState] = useState(0);
+
+	return (
+		<>
+			<p>Diste click {state} veces</p>
+			<button
+				onClick={() => {
+					setState((prevState) => prevState + 1);
+				}}
+			>
+				Click
+			</button>
+		</>
+	);
+}

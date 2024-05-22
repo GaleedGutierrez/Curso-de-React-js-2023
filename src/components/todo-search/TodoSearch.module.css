@@ -25,10 +25,18 @@
 	}
 
 	&:focus-within {
-		outline: var(--border-1) solid var(--bright-blue);
+		outline: var(--bright-blue-accessibility) solid var(--border-1);
 
 		&::before {
-			border-color: var(--bright-blue);
+			border-color: var(--outline-color);
+		}
+
+		@media (prefers-color-scheme: dark) {
+			outline-color: var(--cyan-accessibility);
+
+			&::before {
+				border-color: var(--cyan-accessibility);
+			}
 		}
 	}
 }

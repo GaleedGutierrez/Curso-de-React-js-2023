@@ -9,18 +9,21 @@ function TodoBoxStatus(): JSX.Element {
 			<nav className={styles['m-box-status__filters']}>
 				<a
 					href="#all"
+					aria-label="Show all tasks"
 					className={`${styles['m-box-status__filter']} ${styles['m-box-status__filter--active']}`}
 				>
 					All
 				</a>
 				<a
 					href="#active"
+					aria-label="Show active tasks"
 					className={styles['m-box-status__filter']}
 				>
 					Active
 				</a>
 				<a
 					href="#completed"
+					aria-label="Show completed tasks"
 					className={styles['m-box-status__filter']}
 				>
 					Completed

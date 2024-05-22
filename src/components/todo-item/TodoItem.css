@@ -15,12 +15,35 @@
 		line-height: initial;
 	}
 
+	/* &:focus-within {
+		outline: var(--bright-blue-accessibility) solid var(--border-1);
+
+		@media (prefers-color-scheme: dark) {
+			outline-color: var(--cyan-accessibility);
+		}
+	} */
+
 	.m-todo-item__close-button {
+		&:focus-within {
+			border-radius: var(--border-radius-1);
+			outline: var(--bright-blue-accessibility) solid var(--border-1);
+			outline-offset: 0.4rem;
+			opacity: 1;
+
+			@media (prefers-color-scheme: dark) {
+				outline-color: var(--cyan-accessibility);
+			}
+		}
+
 		svg path {
 			fill: light-dark(
 				var(--very-dark-grayish-blue),
 				var(--dt-light-grayish-blue)
 			);
+		}
+
+		&:active svg path {
+			fill: var(--bright-blue);
 		}
 	}
 

@@ -13,7 +13,10 @@ function TodoItem({ text, completed }: Item): JSX.Element {
 						className="is-sr-only"
 					/>
 				</div>
-				<span className="m-todo-item__task">{text}</span>
+				<span className="m-todo-item__task">
+					{/* {completed ? <s>{text}</s> : text} */}
+					{text}
+				</span>
 			</label>
 			<label className="m-todo-item__edit-task">
 				<input type="text" />
@@ -21,6 +24,14 @@ function TodoItem({ text, completed }: Item): JSX.Element {
 			<button
 				type="button"
 				className="m-todo-item__close-button"
+				onClick={(event) => {
+					// eslint-disable-next-line no-console
+					console.log('Click en eliminar');
+					// eslint-disable-next-line no-console
+					console.log(event);
+					// eslint-disable-next-line no-console
+					console.log(event.target);
+				}}
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

@@ -5,7 +5,7 @@ import styles from './TodoBoxStatus.module.css';
 function TodoBoxStatus(): JSX.Element {
 	return (
 		<div className={styles['m-box-status']}>
-			<TodoItemsLeft />
+			<TodoItemsLeft itemLefts={10} />
 			<nav className={styles['m-box-status__filters']}>
 				<a
 					href="#all"

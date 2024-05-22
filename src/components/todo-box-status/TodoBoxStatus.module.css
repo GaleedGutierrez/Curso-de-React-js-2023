@@ -13,7 +13,7 @@
 .m-box-status__filters {
 	position: absolute;
 	inset-inline: 0;
-	inset-block-start: calc(6.8rem + var(--space-4));
+	inset-block-start: calc(6rem + var(--space-4));
 	display: flex;
 	gap: var(--space-4);
 	justify-content: center;
@@ -54,5 +54,6 @@
 		inline-size: fit-content;
 		padding: 0;
 		box-shadow: none;
+		background-color: initial;
 	}
 }

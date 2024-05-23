@@ -1,6 +1,9 @@
 import './TodoItem.css';
 
-import { Item } from '../../types/interfaces';
+interface Item {
+	text: string;
+	completed: boolean;
+}
 
 function TodoItem({ text, completed }: Item): JSX.Element {
 	return (

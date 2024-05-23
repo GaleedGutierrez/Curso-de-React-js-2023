@@ -2,12 +2,15 @@ import { useState } from 'react';
 
 import styles from './TodoSearch.module.css';
 
-export function TodoAddNewTask(): JSX.Element {
-	const [searchValue, setSearchValue] = useState('');
+interface State {
+	searchValue: string;
+	setSearchValue: (value: React.SetStateAction<string>) => void;
+}
 
-	// eslint-disable-next-line no-console
-	console.log('Los usuario buscan TODOs de: ', searchValue);
-
+export function TodoAddNewTask({
+	searchValue,
+	setSearchValue,
+}: State): JSX.Element {
 	return (
 		<label
 			className={styles['m-todo-search__container']}

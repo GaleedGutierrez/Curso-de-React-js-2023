@@ -2,10 +2,10 @@ import { TodoButtonClearCompleted } from '../todo-button-clear-completed/TodoBut
 import { TodoItemsLeft } from '../todo-items-left/TodoItemsLeft';
 import styles from './TodoBoxStatus.module.css';
 
-function TodoBoxStatus(): JSX.Element {
+function TodoBoxStatus({ leftsTodos }: { leftsTodos: number }): JSX.Element {
 	return (
 		<div className={styles['m-box-status']}>
-			<TodoItemsLeft itemLefts={10} />
+			<TodoItemsLeft itemLefts={leftsTodos} />
 			<nav className={styles['m-box-status__filters']}>
 				<a
 					href="#all"

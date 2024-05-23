@@ -417,6 +417,7 @@ module.exports = {
 		'no-nested-ternary': 'error',
 
 		// Styles
+		'no-implicit-coercion': 'error',
 		'arrow-body-style': ['error', 'as-needed'],
 		curly: 'error',
 		'@stylistic/lines-between-class-members': [

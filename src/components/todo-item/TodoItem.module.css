@@ -15,16 +15,8 @@
 		line-height: initial;
 	}
 
-	/* &:focus-within {
-		outline: var(--bright-blue-accessibility) solid var(--border-1);
-
-		@media (prefers-color-scheme: dark) {
-			outline-color: var(--cyan-accessibility);
-		}
-	} */
-
 	.m-todo-item__close-button {
-		&:focus-within {
+		&:focus-visible {
 			border-radius: var(--border-radius-1);
 			outline: var(--bright-blue-accessibility) solid var(--border-1);
 			outline-offset: 0.4rem;
@@ -70,7 +62,6 @@
 			var(--light-grayish-blue),
 			var(--dt-very-dark-grayish-blue)
 		);
-		text-decoration: line-through;
 	}
 }
 

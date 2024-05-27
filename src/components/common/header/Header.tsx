@@ -5,14 +5,16 @@ import styles from './Header.module.css';
 
 export function Header(): JSX.Element {
 	return (
-		<header className={styles['g-header']}>
-			<h1 className={styles['g-header__title']}>TODO</h1>
-			<button
-				className={styles['g-header__theme-icon']}
-				aria-label="Change theme"
-			>
-				{isThemeBrowserDark() ? <SunIcon /> : <MoonIcon />}
-			</button>
-		</header>
+		<>
+			<header className={styles['g-header']}>
+				<h1 className={styles['g-header__title']}>TODO</h1>
+				<button
+					className={styles['g-header__theme-icon']}
+					aria-label="Change theme"
+				>
+					{isThemeBrowserDark() ? <SunIcon /> : <MoonIcon />}
+				</button>
+			</header>
+		</>
 	);
 }

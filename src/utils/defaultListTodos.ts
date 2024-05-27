@@ -1,6 +1,6 @@
-import { Item } from '../types/interfaces';
+import { Task } from '../types/interfaces';
 
-export const DEFAULT_TODOS: Item[] = [
+export const DEFAULT_TODOS: Task[] = [
 	{
 		text: 'Cortar cebolla',
 		completed: true,

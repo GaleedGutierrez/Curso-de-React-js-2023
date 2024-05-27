@@ -9,22 +9,30 @@ import { TodoAddNewTask } from './components/todo-search/TodoSearch';
 import { Task } from './types/interfaces';
 import { normalizeText } from './utils/normalizeText';
 
-function updateLocalStorage(newTodos: Task[]): void {
-	localStorage.setItem('todoAppV1', JSON.stringify(newTodos));
+function useLocalStorage<T>(
+	key: string,
+	initialValue: T[],
+): [T[], (newItem: T[]) => void] {
+	const LOCAL_STORAGE_DATA =
+		localStorage.getItem(key) ?? JSON.stringify(initialValue);
+	const PARSED_ITEM = JSON.parse(LOCAL_STORAGE_DATA) as T[];
+	const [ITEM, setItem] = useState(PARSED_ITEM);
+
+	function updateItem(newItem: T[]): void {
+		localStorage.setItem(key, JSON.stringify(newItem));
+		setItem(newItem);
+	}
+
+	return [ITEM, updateItem];
 }
 
 const getLengthLeftTodo = (todos: Task[]): number =>
 	todos.filter((todo) => !todo.completed).length;
 
-// localStorage.removeItem('todoAppV1');
-
-const parsedTodo = JSON.parse(
-	localStorage.getItem('todoAppV1') ?? '[]',
-) as Task[];
-
 export function App(): JSX.Element {
+	const CURRENT_STORAGE_KEY = 'todoAppV1';
+	const [TODOS, setTodos] = useLocalStorage<Task>(CURRENT_STORAGE_KEY, []);
 	const [SEARCH_VALUE, setSearchValue] = useState('');
-	const [TODOS, setTodos] = useState(parsedTodo);
 	const [LEFT_TODOS, setLeftTodos] = useState(getLengthLeftTodo(TODOS));
 
 	const SEARCHED_TODOS = TODOS.filter((todo) => {
@@ -40,7 +48,6 @@ export function App(): JSX.Element {
 
 		setTodos(NEW_TASKS);
 		setLeftTodos(getLengthLeftTodo(NEW_TASKS));
-		updateLocalStorage(NEW_TASKS);
 	};
 
 	const updateStatusTask = (id: string, completed: boolean): void => {
@@ -51,7 +58,6 @@ export function App(): JSX.Element {
 		});
 
 		setTodos(NEW_TASKS);
-		updateLocalStorage(NEW_TASKS);
 	};
 
 	return (

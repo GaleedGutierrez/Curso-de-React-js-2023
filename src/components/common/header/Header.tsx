@@ -1,6 +1,7 @@
-import { isThemeBrowserDark } from '../../../utils/isThemeBrowserDark';
-import { MoonIcon } from '../moon-icon/MoonIcon';
-import { SunIcon } from '../sun-icon/SunIcon';
+import { MoonIcon } from '@components/common/moon-icon/MoonIcon';
+import { SunIcon } from '@components/common/sun-icon/SunIcon';
+import { isThemeBrowserDark } from '@utils/isThemeBrowserDark';
+
 import styles from './Header.module.css';
 
 export function Header(): JSX.Element {

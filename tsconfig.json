@@ -23,7 +23,19 @@
 		"noImplicitReturns": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+
+		"baseUrl": "./",
+		"paths": {
+			"@src/*": ["src/*"],
+			"@tests/*": ["tests/*"],
+			"@styles/*": ["src/styles/*"],
+			"@utils/*": ["src/utils/*"],
+			"@templates/*": ["src/templates/*"],
+			"@types/*": ["src/types/*"],
+			"@images/*": ["assets/images/*"],
+			"@components/*": ["src/components/*"]
+		}
 	},
 	"include": ["./**/*.ts", "./**/*.tsx"],
 	"exclude": ["node_modules"],

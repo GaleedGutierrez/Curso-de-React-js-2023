@@ -1,4 +1,4 @@
-import { Task } from '../types/interfaces';
+import { Task } from '@src/types/interfaces';
 
 export const DEFAULT_TODOS: Task[] = [
 	{

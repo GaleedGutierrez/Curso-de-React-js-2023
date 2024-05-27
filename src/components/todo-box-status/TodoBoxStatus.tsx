@@ -1,7 +1,7 @@
+import { TodoButtonClearCompleted } from '@components/todo-button-clear-completed/TodoButtonClearCompleted';
+import { TodoItemsLeft } from '@components/todo-items-left/TodoItemsLeft';
 import { FC } from 'react';
 
-import { TodoButtonClearCompleted } from '../todo-button-clear-completed/TodoButtonClearCompleted';
-import { TodoItemsLeft } from '../todo-items-left/TodoItemsLeft';
 import styles from './TodoBoxStatus.module.css';
 
 interface Props {

@@ -1,7 +1,7 @@
+import { CheckboxIcon } from '@components/common/checkbox-icon/CheckboxIcon';
+import { CrossIcon } from '@components/common/cross-icon/CrossIcon';
 import { FC, useState } from 'react';
 
-import { CheckboxIcon } from '../common/checkbox-icon/CheckboxIcon';
-import { CrossIcon } from '../common/cross-icon/CrossIcon';
 import styles from './TodoItem.module.css';
 
 interface Props {

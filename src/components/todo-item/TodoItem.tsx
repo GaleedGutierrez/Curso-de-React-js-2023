@@ -1,5 +1,7 @@
 import { FC, useState } from 'react';
 
+import { CheckboxIcon } from '../common/checkbox-icon/CheckboxIcon';
+import { CrossIcon } from '../common/cross-icon/CrossIcon';
 import styles from './TodoItem.module.css';
 
 interface Props {
@@ -29,14 +31,10 @@ export const TodoItem: FC<Props> = ({
 	return (
 		<li className={styles['m-todo-item']}>
 			<label className={styles['m-todo-item__label']}>
-				<div className="a-checkbox">
-					<input
-						type="checkbox"
-						defaultChecked={isCompleted}
-						className="is-sr-only"
-						onClick={updateIsCompleted}
-					/>
-				</div>
+				<CheckboxIcon
+					isCompleted={isCompleted}
+					updateIsCompleted={updateIsCompleted}
+				/>
 				<span className={styles['m-todo-item__task']}>
 					{isCompleted ? <s>{text}</s> : text}
 				</span>
@@ -52,18 +50,7 @@ export const TodoItem: FC<Props> = ({
 					deleteTask(id);
 				}}
 			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="1.8rem"
-					height="1.8rem"
-					className="a-icon"
-				>
-					<path
-						fill="#494C6B"
-						fillRule="evenodd"
-						d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-					/>
-				</svg>
+				<CrossIcon />
 			</button>
 		</li>
 	);

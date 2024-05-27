@@ -1,0 +1,18 @@
+s::before,
+s::after {
+	position: absolute;
+	overflow: hidden;
+	height: 1px;
+	width: 1px;
+	white-space: nowrap;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(100%);
+}
+
+s::before {
+	content: "[start of stricken text] ";
+}
+
+s::after {
+	content: " [end of stricken text]";
+}

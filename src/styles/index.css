@@ -11,6 +11,7 @@
 @import url("./elements/_html.css");
 @import url("./elements/_link.css");
 @import url("./elements/_paragraph.css");
+@import url("./elements/_strikethrough.css");
 
 /* Mixins */
 @import url("./tools/_mixins.css");

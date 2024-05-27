@@ -1,13 +1,13 @@
+import { Header } from '@components/common/header/Header';
+import { TodoBoxStatus } from '@components/todo-box-status/TodoBoxStatus';
+import { TodoItem } from '@components/todo-item/TodoItem';
+import { TodoList } from '@components/todo-list/TodoList';
+import { TodoAddNewTask } from '@components/todo-search/TodoSearch';
+import { Task } from '@src/types/interfaces';
+import { normalizeText } from '@utils/normalizeText';
 import { useState } from 'react';
 
 import styles from './App.module.css';
-import { Header } from './components/common/header/Header';
-import { TodoBoxStatus } from './components/todo-box-status/TodoBoxStatus';
-import { TodoItem } from './components/todo-item/TodoItem';
-import { TodoList } from './components/todo-list/TodoList';
-import { TodoAddNewTask } from './components/todo-search/TodoSearch';
-import { Task } from './types/interfaces';
-import { normalizeText } from './utils/normalizeText';
 
 function useLocalStorage<T>(
 	key: string,

@@ -20,6 +20,7 @@ export default defineConfig({
 			'@components': fileURLToPath(
 				new URL('./src/components/', import.meta.url),
 			),
+			'@hooks': fileURLToPath(new URL('./src/hooks/', import.meta.url)),
 		},
 	},
 });

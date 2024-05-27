@@ -1,40 +1,55 @@
-import './TodoItem.css';
+import { FC, useState } from 'react';
 
-interface Item {
+import styles from './TodoItem.module.css';
+
+interface Props {
 	text: string;
-	completed: boolean;
+	initialCompleted: boolean;
+	id: string;
+	deleteTask: (id: string) => void;
+	setLeftTodos: React.Dispatch<React.SetStateAction<number>>;
+	updateStatusTask: (id: string, completed: boolean) => void;
 }
 
-function TodoItem({ text, completed }: Item): JSX.Element {
+export const TodoItem: FC<Props> = ({
+	text,
+	initialCompleted,
+	id,
+	deleteTask,
+	setLeftTodos,
+	updateStatusTask,
+}) => {
+	const [isCompleted, setIsCompleted] = useState(initialCompleted);
+	const updateIsCompleted = (): void => {
+		setIsCompleted(!isCompleted);
+		setLeftTodos((prev) => (isCompleted ? prev + 1 : prev - 1));
+		updateStatusTask(id, !isCompleted);
+	};
+
 	return (
-		<li className="m-todo-item">
-			<label className="m-todo-item__label">
+		<li className={styles['m-todo-item']}>
+			<label className={styles['m-todo-item__label']}>
 				<div className="a-checkbox">
 					<input
 						type="checkbox"
-						defaultChecked={completed}
+						defaultChecked={isCompleted}
 						className="is-sr-only"
+						onClick={updateIsCompleted}
 					/>
 				</div>
-				<span className="m-todo-item__task">
-					{/* {completed ? <s>{text}</s> : text} */}
-					{text}
+				<span className={styles['m-todo-item__task']}>
+					{isCompleted ? <s>{text}</s> : text}
 				</span>
 			</label>
-			<label className="m-todo-item__edit-task">
+			<label className={styles['m-todo-item__edit-task']}>
 				<input type="text" />
 			</label>
 			<button
 				type="button"
-				className="m-todo-item__close-button"
+				className={styles['m-todo-item__close-button']}
 				aria-label="Delete task"
-				onClick={(event) => {
-					// eslint-disable-next-line no-console
-					console.log('Click en eliminar');
-					// eslint-disable-next-line no-console
-					console.log(event);
-					// eslint-disable-next-line no-console
-					console.log(event.target);
+				onClick={() => {
+					deleteTask(id);
 				}}
 			>
 				<svg
@@ -52,6 +67,4 @@ function TodoItem({ text, completed }: Item): JSX.Element {
 			</button>
 		</li>
 	);
-}
-
-export { TodoItem };
+};

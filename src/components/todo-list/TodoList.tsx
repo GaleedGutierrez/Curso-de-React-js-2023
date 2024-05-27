@@ -1,11 +1,11 @@
-import './TodoList.css';
+import { FC } from 'react';
 
-export function TodoList({
-	children,
-	// searchValue,
-}: {
+import styles from './TodoList.module.css';
+
+interface Props {
 	children: React.ReactNode;
-	// searchValue: string;
-}): JSX.Element {
-	return <ul className="m-todo-list">{children}</ul>;
 }
+
+export const TodoList: FC<Props> = ({ children }) => (
+	<ul className={styles['m-todo-list']}>{children}</ul>
+);

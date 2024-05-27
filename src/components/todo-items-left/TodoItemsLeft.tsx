@@ -1,5 +1,9 @@
-function TodoItemsLeft({ itemLefts }: { itemLefts: number }): JSX.Element {
-	return <p className="text-color-2">{itemLefts} items left</p>;
+import { FC } from 'react';
+
+interface Props {
+	itemLefts: number;
 }
 
-export { TodoItemsLeft };
+export const TodoItemsLeft: FC<Props> = ({ itemLefts }) => (
+	<p className="text-color-2">{itemLefts} items left</p>
+);

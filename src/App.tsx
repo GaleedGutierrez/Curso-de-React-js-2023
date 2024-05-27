@@ -3,35 +3,22 @@ import { TodoBoxStatus } from '@components/todo-box-status/TodoBoxStatus';
 import { TodoItem } from '@components/todo-item/TodoItem';
 import { TodoList } from '@components/todo-list/TodoList';
 import { TodoAddNewTask } from '@components/todo-search/TodoSearch';
+import { useLocalStorageList } from '@hooks/useLocalStorageList';
 import { Task } from '@src/types/interfaces';
 import { normalizeText } from '@utils/normalizeText';
 import { useState } from 'react';
 
 import styles from './App.module.css';
 
-function useLocalStorage<T>(
-	key: string,
-	initialValue: T[],
-): [T[], (newItem: T[]) => void] {
-	const LOCAL_STORAGE_DATA =
-		localStorage.getItem(key) ?? JSON.stringify(initialValue);
-	const PARSED_ITEM = JSON.parse(LOCAL_STORAGE_DATA) as T[];
-	const [ITEM, setItem] = useState(PARSED_ITEM);
-
-	function updateItem(newItem: T[]): void {
-		localStorage.setItem(key, JSON.stringify(newItem));
-		setItem(newItem);
-	}
-
-	return [ITEM, updateItem];
-}
-
 const getLengthLeftTodo = (todos: Task[]): number =>
 	todos.filter((todo) => !todo.completed).length;
 
 export function App(): JSX.Element {
 	const CURRENT_STORAGE_KEY = 'todoAppV1';
-	const [TODOS, setTodos] = useLocalStorage<Task>(CURRENT_STORAGE_KEY, []);
+	const [TODOS, setTodos] = useLocalStorageList<Task>(
+		CURRENT_STORAGE_KEY,
+		[],
+	);
 	const [SEARCH_VALUE, setSearchValue] = useState('');
 	const [LEFT_TODOS, setLeftTodos] = useState(getLengthLeftTodo(TODOS));
 

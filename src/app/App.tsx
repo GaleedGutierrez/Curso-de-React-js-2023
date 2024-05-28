@@ -2,7 +2,7 @@ import { useLocalStorageList } from '@hooks/useLocalStorageList';
 import { Task } from '@src/types/interfaces';
 import { getLengthLeftTodo } from '@utils/getLengthLeftTodo';
 import { normalizeText } from '@utils/normalizeText';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { AppUI } from './AppUI';
 
@@ -27,7 +27,6 @@ export function App(): JSX.Element {
 		const NEW_TASKS = TODOS.toSpliced(INDEX_DELETED_TASK, 1);
 
 		setTodos(NEW_TASKS);
-		setLeftTodos(getLengthLeftTodo(NEW_TASKS));
 	};
 
 	const updateStatusTask = (id: string, completed: boolean): void => {
@@ -39,6 +38,10 @@ export function App(): JSX.Element {
 
 		setTodos(NEW_TASKS);
 	};
+
+	useEffect(() => {
+		setLeftTodos(getLengthLeftTodo(SEARCHED_TODOS));
+	}, [SEARCHED_TODOS]);
 
 	return (
 		<AppUI

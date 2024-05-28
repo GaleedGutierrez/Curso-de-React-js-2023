@@ -1,5 +1,5 @@
-import { MoonIcon } from '@components/common/moon-icon/MoonIcon';
-import { SunIcon } from '@components/common/sun-icon/SunIcon';
+import { MoonIcon } from '@components/ui/atoms/icons/moon-icon/MoonIcon';
+import { SunIcon } from '@components/ui/atoms/icons/sun-icon/SunIcon';
 import { isThemeBrowserDark } from '@utils/isThemeBrowserDark';
 
 import styles from './Header.module.css';

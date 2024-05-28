@@ -1,10 +1,12 @@
+import styles from '../icons.module.css';
+
 export function CrossIcon(): JSX.Element {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="1.8rem"
 			height="1.8rem"
-			className="a-icon"
+			className={styles['a-icon']}
 		>
 			<path
 				fill="#494C6B"

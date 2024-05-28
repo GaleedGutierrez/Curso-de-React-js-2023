@@ -1,5 +1,5 @@
-import { CheckboxIcon } from '@components/common/checkbox-icon/CheckboxIcon';
-import { CrossIcon } from '@components/common/cross-icon/CrossIcon';
+import { CheckboxIcon } from '@components/ui/atoms/checkbox-icon/CheckboxIcon';
+import { CrossIcon } from '@components/ui/atoms/icons/cross-icon/CrossIcon';
 import { FC, useState } from 'react';
 
 import styles from './TodoItem.module.css';

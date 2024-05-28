@@ -1,10 +1,12 @@
+import styles from '../icons.module.css';
+
 export function MoonIcon(): JSX.Element {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="2.6rem"
 			height="2.6rem"
-			className="a-icon"
+			className={styles['a-icon']}
 		>
 			<path
 				fill="#FFF"

@@ -35,14 +35,12 @@
 @import url("./utilities/_background.css");
 
 /* Atoms */
-@import url("../components/ui/atoms/_checkbox.css");
-@import url("../components/ui/atoms/_icons.css");
 
 /* Molecules */
 
 /* Organisms */
 
-body {
+.background-app {
 	background-image: url("../assets/images/bg-mobile-light.jpg");
 	background-repeat: no-repeat;
 	background-position-y: top;

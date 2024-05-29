@@ -1,13 +1,14 @@
 import { useState } from 'react';
 
-type State<T> = [T[], (newItem: T[]) => void];
+type customState<T> = [T[], (newItem: T[]) => void];
 
 export function useLocalStorageList<T>(
 	key: string,
-	initialValue: T[],
-): State<T> {
+	initialValue: T[] = [],
+): customState<T> {
 	const LOCAL_STORAGE_DATA =
 		localStorage.getItem(key) ?? JSON.stringify(initialValue);
+
 	const PARSED_ITEM = JSON.parse(LOCAL_STORAGE_DATA) as T[];
 	const [ITEM, setItem] = useState(PARSED_ITEM);
 

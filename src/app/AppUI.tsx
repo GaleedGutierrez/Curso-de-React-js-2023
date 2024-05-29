@@ -35,7 +35,6 @@ export const AppUI: FC<Props> = ({
 				searchValue={searchValue}
 				setSearchValue={setSearchValue}
 			/>
-
 			<div
 				style={{
 					display: searchedTodos.length === 0 ? 'none' : 'block',

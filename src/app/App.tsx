@@ -8,10 +8,12 @@ import { AppUI } from './AppUI';
 
 export function App(): JSX.Element {
 	const CURRENT_STORAGE_KEY = 'todoAppV1';
-	const [TODOS, setTodos] = useLocalStorageList<Task>(
-		CURRENT_STORAGE_KEY,
-		[],
-	);
+	const {
+		item: TODOS,
+		setItem: setTodos,
+		loading,
+		error,
+	} = useLocalStorageList<Task>(CURRENT_STORAGE_KEY);
 	const [SEARCH_VALUE, setSearchValue] = useState('');
 	const [LEFT_TODOS, setLeftTodos] = useState(getLengthLeftTodo(TODOS));
 
@@ -52,6 +54,8 @@ export function App(): JSX.Element {
 			setLeftTodos={setLeftTodos}
 			updateStatusTask={updateStatusTask}
 			leftTodos={LEFT_TODOS}
+			loading={loading}
+			error={error}
 		/>
 	);
 }

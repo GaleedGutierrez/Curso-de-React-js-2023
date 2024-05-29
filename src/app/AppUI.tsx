@@ -16,6 +16,8 @@ interface Props {
 	setLeftTodos: React.Dispatch<React.SetStateAction<number>>;
 	updateStatusTask: (id: string, completed: boolean) => void;
 	leftTodos: number;
+	loading: boolean;
+	error: boolean;
 }
 
 export const AppUI: FC<Props> = ({
@@ -26,6 +28,8 @@ export const AppUI: FC<Props> = ({
 	setLeftTodos,
 	updateStatusTask,
 	leftTodos,
+	loading,
+	error,
 }) => (
 	<div className={styles['app-container']}>
 		<Header />
@@ -35,7 +39,8 @@ export const AppUI: FC<Props> = ({
 				searchValue={searchValue}
 				setSearchValue={setSearchValue}
 			/>
-
+			{loading ? <p>Loading...</p> : null}
+			{error ? <p>There was an error. 😔</p> : null}
 			<div
 				style={{
 					display: searchedTodos.length === 0 ? 'none' : 'block',
@@ -43,17 +48,19 @@ export const AppUI: FC<Props> = ({
 			>
 				<section className={styles['g-todo-container']}>
 					<TodoList>
-						{searchedTodos.map(({ text, completed, id }) => (
-							<TodoItem
-								key={id}
-								id={id}
-								text={text}
-								initialCompleted={completed}
-								deleteTask={deleteTask}
-								setLeftTodos={setLeftTodos}
-								updateStatusTask={updateStatusTask}
-							/>
-						))}
+						{!loading &&
+							searchedTodos.length > 0 &&
+							searchedTodos.map(({ text, completed, id }) => (
+								<TodoItem
+									key={id}
+									id={id}
+									text={text}
+									initialCompleted={completed}
+									deleteTask={deleteTask}
+									setLeftTodos={setLeftTodos}
+									updateStatusTask={updateStatusTask}
+								/>
+							))}
 					</TodoList>
 					<TodoBoxStatus initialLeftsTodos={leftTodos} />
 				</section>

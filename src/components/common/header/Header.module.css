@@ -11,7 +11,7 @@
 	}
 
 	button {
-		&:focus-within {
+		&:focus-visible {
 			border-radius: var(--border-radius-1);
 			outline: var(--bright-blue-accessibility) solid var(--border-1);
 			outline-offset: 0.4rem;

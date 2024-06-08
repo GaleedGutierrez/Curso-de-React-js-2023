@@ -1,0 +1,16 @@
+.m-add-first-task-card {
+	display: grid;
+	place-content: center center;
+	align-items: center;
+	padding: var(--space-10);
+	border-radius: var(--border-radius-1);
+	box-shadow: var(--shadow-1);
+	background-color: var(--background-color-1);
+
+	svg path {
+		fill: light-dark(
+			var(--very-dark-grayish-blue),
+			var(--dt-light-grayish-blue)
+		);
+	}
+}

@@ -72,6 +72,10 @@
 		var(--very-light-gray),
 		var(--very-dark-blue)
 	);
+	--background-color-3: light-dark(
+		var(--dt-light-grayish-blue),
+		var(--very-dark-grayish-blue)
+	);
 
 	color-scheme: light dark;
 }

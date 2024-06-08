@@ -1,5 +1,6 @@
 import { Header } from '@src/components/common/header/Header';
 import { TodoBoxStatus } from '@src/components/todo-box-status/TodoBoxStatus';
+import { TodoEmpty } from '@src/components/todo-empty/TodoEmpty';
 import { TodoItem } from '@src/components/todo-item/TodoItem';
 import { TodoList } from '@src/components/todo-list/TodoList';
 import { TodoAddNewTask } from '@src/components/todo-search/TodoSearch';
@@ -35,32 +36,30 @@ export const AppUI: FC<Props> = ({
 				searchValue={searchValue}
 				setSearchValue={setSearchValue}
 			/>
-			<div
-				style={{
-					display: searchedTodos.length === 0 ? 'none' : 'block',
-				}}
-			>
-				<section className={styles['g-todo-container']}>
-					<TodoList>
-						{searchedTodos.map(({ text, completed, id }) => (
-							<TodoItem
-								key={id}
-								id={id}
-								text={text}
-								initialCompleted={completed}
-								deleteTask={deleteTask}
-								setLeftTodos={setLeftTodos}
-								updateStatusTask={updateStatusTask}
-							/>
-						))}
-					</TodoList>
-					<TodoBoxStatus initialLeftsTodos={leftTodos} />
-				</section>
-
-				<p className={styles['app-container__drag-and-drop']}>
-					Drag and drop to reorder list
-				</p>
-			</div>
+			<section className={styles['g-todo-container']}>
+				{searchedTodos.length === 0 && <TodoEmpty />}
+				{searchedTodos.length !== 0 && (
+					<>
+						<TodoList>
+							{searchedTodos.map(({ text, completed, id }) => (
+								<TodoItem
+									key={id}
+									id={id}
+									text={text}
+									initialCompleted={completed}
+									deleteTask={deleteTask}
+									setLeftTodos={setLeftTodos}
+									updateStatusTask={updateStatusTask}
+								/>
+							))}
+						</TodoList>
+						<TodoBoxStatus initialLeftsTodos={leftTodos} />
+						<p className={styles['app-container__drag-and-drop']}>
+							Drag and drop to reorder list
+						</p>
+					</>
+				)}
+			</section>
 		</main>
 	</div>
 );

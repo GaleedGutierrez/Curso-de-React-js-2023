@@ -15,12 +15,14 @@ export default defineConfig({
 			'@templates': fileURLToPath(
 				new URL('./src/templates/', import.meta.url),
 			),
-			'@types': fileURLToPath(new URL('./src/types/', import.meta.url)),
 			'@images': fileURLToPath(new URL('./src/images/', import.meta.url)),
 			'@components': fileURLToPath(
 				new URL('./src/components/', import.meta.url),
 			),
 			'@hooks': fileURLToPath(new URL('./src/hooks/', import.meta.url)),
+			'@context': fileURLToPath(
+				new URL('./src/context/', import.meta.url),
+			),
 		},
 	},
 });

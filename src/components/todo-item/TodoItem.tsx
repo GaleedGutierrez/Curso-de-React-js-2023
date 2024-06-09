@@ -1,6 +1,7 @@
 import { CheckboxIcon } from '@components/ui/atoms/checkbox-icon/CheckboxIcon';
 import { CrossIcon } from '@components/ui/atoms/icons/cross-icon/CrossIcon';
-import { FC, useState } from 'react';
+import { TodoContext } from '@src/context/todo-context/TodoContext';
+import { FC, useContext, useState } from 'react';
 
 import styles from './TodoItem.module.css';
 
@@ -8,20 +9,17 @@ interface Props {
 	text: string;
 	initialCompleted: boolean;
 	id: string;
-	deleteTask: (id: string) => void;
-	setLeftTodos: React.Dispatch<React.SetStateAction<number>>;
-	updateStatusTask: (id: string, completed: boolean) => void;
 }
 
-export const TodoItem: FC<Props> = ({
-	text,
-	initialCompleted,
-	id,
-	deleteTask,
-	setLeftTodos,
-	updateStatusTask,
-}) => {
+export const TodoItem: FC<Props> = ({ text, initialCompleted, id }) => {
 	const [isCompleted, setIsCompleted] = useState(initialCompleted);
+	const TODO_CONTEXT = useContext(TodoContext);
+
+	if (!TODO_CONTEXT) {
+		return <></>;
+	}
+
+	const { deleteTask, setLeftTodos, updateStatusTask } = TODO_CONTEXT;
 	const updateIsCompleted = (): void => {
 		setIsCompleted(!isCompleted);
 		setLeftTodos((prev) => (isCompleted ? prev + 1 : prev - 1));

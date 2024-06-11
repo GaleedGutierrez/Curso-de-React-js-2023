@@ -18,13 +18,13 @@
 	.m-todo-item__close-button {
 		&:focus-visible {
 			border-radius: var(--border-radius-1);
-			outline: var(--bright-blue-accessibility) solid var(--border-1);
+			outline: light-dark(
+					var(--bright-blue-accessibility),
+					var(--cyan-accessibility)
+				)
+				solid var(--border-1);
 			outline-offset: 0.4rem;
 			opacity: 1;
-
-			@media (prefers-color-scheme: dark) {
-				outline-color: var(--cyan-accessibility);
-			}
 		}
 
 		svg path {

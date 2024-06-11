@@ -12,12 +12,12 @@
 	button {
 		&:focus-visible {
 			border-radius: var(--border-radius-1);
-			outline: var(--bright-blue-accessibility) solid var(--border-1);
+			outline: light-dark(
+					var(--bright-blue-accessibility),
+					var(--cyan-accessibility)
+				)
+				solid var(--border-1);
 			outline-offset: 0.4rem;
-
-			@media (prefers-color-scheme: dark) {
-				outline-color: var(--cyan-accessibility);
-			}
 		}
 	}
 }
@@ -53,12 +53,12 @@
 
 	&:focus-visible {
 		border-radius: var(--border-radius-1);
-		outline: var(--bright-blue-accessibility) solid var(--border-1);
+		outline: light-dark(
+				var(--bright-blue-accessibility),
+				var(--cyan-accessibility)
+			)
+			solid var(--border-1);
 		outline-offset: 0.4rem;
-
-		@media (prefers-color-scheme: dark) {
-			outline-color: var(--cyan-accessibility);
-		}
 	}
 }
 

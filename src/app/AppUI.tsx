@@ -4,7 +4,7 @@ import { TodoEmpty } from '@components/todo-empty/TodoEmpty';
 import { TodoItem } from '@components/todo-item/TodoItem';
 import { TodoList } from '@components/todo-list/TodoList';
 import { TodoAddNewTask } from '@components/todo-search/TodoSearch';
-import { TodoContext } from '@context/todo-context/TodoContext';
+import { TodoContext } from '@src/context/todo-context/TodoContext';
 import { useContext } from 'react';
 
 import styles from './App.module.css';
@@ -24,23 +24,25 @@ export function AppUI(): JSX.Element {
 
 			<main>
 				<TodoAddNewTask />
-				<section className={styles['g-todo-container']}>
+				<section>
 					{searchedTodos.length === 0 && <TodoEmpty />}
 					{searchedTodos.length !== 0 && (
 						<>
-							<TodoList>
-								{searchedTodos.map(
-									({ text, completed, id }) => (
-										<TodoItem
-											key={id}
-											id={id}
-											text={text}
-											initialCompleted={completed}
-										/>
-									),
-								)}
-							</TodoList>
-							<TodoBoxStatus />
+							<div className={styles['g-todo-container']}>
+								<TodoList>
+									{searchedTodos.map(
+										({ text, completed, id }) => (
+											<TodoItem
+												key={id}
+												id={id}
+												text={text}
+												initialCompleted={completed}
+											/>
+										),
+									)}
+								</TodoList>
+								<TodoBoxStatus />
+							</div>
 							<p
 								className={
 									styles['app-container__drag-and-drop']

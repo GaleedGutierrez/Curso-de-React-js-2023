@@ -22,7 +22,7 @@
 		"web-vitals": "^4.0.1"
 	},
 	"devDependencies": {
-		"@codechecks/build-size-watcher": "^0.0.14",
+		"@codechecks/build-size-watcher": "^0.1.0",
 		"@codechecks/client": "^0.1.12",
 		"@commitlint/cli": "^19.3.0",
 		"@commitlint/config-conventional": "^19.2.2",
@@ -55,7 +55,6 @@
 		"stylelint-prettier": "^5.0.0",
 		"typecov": "^0.2.3",
 		"typescript": "^5.4.5",
-		"typescript-coverage-report": "^1.0.0",
 		"vite": "^5.2.0"
 	},
 	"browserslist": {

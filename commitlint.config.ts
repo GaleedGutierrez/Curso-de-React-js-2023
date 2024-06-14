@@ -5,4 +5,4 @@ const Configuration: UserConfig = {
 	formatter: '@commitlint/format',
 };
 
-module.exports = Configuration;
+export default Configuration;

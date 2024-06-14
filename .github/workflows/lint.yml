@@ -9,7 +9,7 @@ jobs:
               uses: actions/checkout@v2
 
             - name: 📥 Install Dependencies
-              run: yarn install --frozen-lockfile
+              run: npm ci
 
             - name: 🌹 ESLint
               run: npm run lint

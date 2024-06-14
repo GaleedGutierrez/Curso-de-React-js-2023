@@ -5,12 +5,16 @@ import { createRoot } from 'react-dom/client';
 
 import { App } from './app/App';
 
-const container = document.getElementById('root') as HTMLDivElement;
-const root = createRoot(container);
+const container = document.getElementById('root');
 
-root.render(
-	<StrictMode>
-		<App />
-	</StrictMode>,
-);
+if (container instanceof HTMLDivElement) {
+	const root = createRoot(container);
+
+	root.render(
+		<StrictMode>
+			<App />
+		</StrictMode>,
+	);
+}
+
 // root.render(<App />);

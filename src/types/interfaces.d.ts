@@ -15,6 +15,11 @@ export interface ITodoContext {
 	theme: Theme;
 	setTheme: React.Dispatch<React.SetStateAction<Theme>>;
 	changeTheme: (useSystemTheme?: boolean) => void;
+	editingTask: Task[id];
+	setEditingTask: React.Dispatch<
+		React.SetStateAction<`${string}-${string}-${string}-${string}-${string}`>
+	>;
+	updateTask: (id: Task['id'], newText: string) => void;
 }
 
 export interface ThemeContext {

@@ -13,11 +13,9 @@ const IS_THEME_DARK = globalThis.matchMedia(
 	'(prefers-color-scheme: dark)',
 ).matches;
 const CURRENT_THEME = IS_THEME_DARK ? Theme.Dark : Theme.Light;
-const BODY = document.getElementById('body');
+const BODY = document.getElementById('body') as HTMLBodyElement;
 
-if (BODY instanceof HTMLBodyElement) {
-	BODY.classList.add(CURRENT_THEME);
-}
+BODY.classList.add(CURRENT_THEME);
 
 export const TodoContext = createContext<ITodoContext | undefined>(undefined);
 
@@ -32,6 +30,7 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 	const [THEME, setTheme] = useState(
 		DARK_THEME_PREFERENCE.matches ? Theme.Dark : Theme.Light,
 	);
+	const [EDITING_TASK, setEditingTask] = useState<Task['id']>('0-0-0-0-0');
 
 	const SEARCHED_TODOS = TODOS.filter((todo) => {
 		const TODO_TEXT = normalizeText(todo.text).toLocaleLowerCase();
@@ -39,6 +38,14 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 
 		return TODO_TEXT.includes(TODO_SEARCH);
 	});
+
+	const updateTask = (id: Task['id'], newText: string): void => {
+		const INDEX_UPDATED_TASK = TODOS.findIndex((todo) => todo.id === id);
+		const UPDATED_TASKS = TODOS;
+
+		UPDATED_TASKS[INDEX_UPDATED_TASK].text = newText;
+		setTodos(UPDATED_TASKS);
+	};
 
 	const deleteTask = (id: string): void => {
 		const INDEX_DELETED_TASK = TODOS.findIndex((todo) => todo.id === id);
@@ -58,7 +65,7 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 	};
 
 	const changeTheme = (useSystemTheme = false): void => {
-		let currentTheme = BODY?.classList.contains(Theme.Light)
+		let currentTheme = BODY.classList.contains(Theme.Light)
 			? Theme.Light
 			: Theme.Dark;
 
@@ -68,9 +75,9 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 			newTheme = DARK_THEME_PREFERENCE.matches ? Theme.Dark : Theme.Light;
 		}
 
-		BODY?.classList.replace(currentTheme, newTheme);
+		BODY.classList.replace(currentTheme, newTheme);
 
-		currentTheme = BODY?.classList.contains(Theme.Light)
+		currentTheme = BODY.classList.contains(Theme.Light)
 			? Theme.Light
 			: Theme.Dark;
 
@@ -87,6 +94,37 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 		);
 	});
 
+	useEffect(() => {
+		BODY.addEventListener('click', (event) => {
+			const TARGET = event.target;
+			const IS_EDITING =
+				TARGET instanceof HTMLElement &&
+				!TARGET.classList.contains('editing');
+
+			if (!IS_EDITING) {
+				return;
+			}
+
+			const EDITING_TASK = document.querySelector('.editing');
+			const IS_TEXTAREA = EDITING_TASK instanceof HTMLTextAreaElement;
+
+			if (!IS_TEXTAREA) {
+				return;
+			}
+
+			const TASK_ID = EDITING_TASK.id as Task['id'];
+			const NEW_TEXT = EDITING_TASK.value.trim();
+
+			if (!NEW_TEXT) {
+				deleteTask(TASK_ID);
+			} else {
+				updateTask(TASK_ID, NEW_TEXT);
+			}
+
+			setEditingTask('0-0-0-0-0');
+		});
+	});
+
 	return (
 		<TodoContext.Provider
 			value={{
@@ -100,6 +138,9 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 				theme: THEME,
 				setTheme,
 				changeTheme,
+				editingTask: EDITING_TASK,
+				setEditingTask,
+				updateTask,
 			}}
 		>
 			{children}

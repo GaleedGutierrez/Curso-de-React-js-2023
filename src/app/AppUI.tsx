@@ -16,7 +16,8 @@ export function AppUI(): JSX.Element {
 		return <></>;
 	}
 
-	const { searchedTodos } = TODO_CONTEXT;
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+	const { searchedTodos, editingTask } = TODO_CONTEXT;
 
 	return (
 		<div className={styles['app-container']}>
@@ -30,16 +31,15 @@ export function AppUI(): JSX.Element {
 						<>
 							<div className={styles['g-todo-container']}>
 								<TodoList>
-									{searchedTodos.map(
-										({ text, completed, id }) => (
-											<TodoItem
-												key={id}
-												id={id}
-												text={text}
-												initialCompleted={completed}
-											/>
-										),
-									)}
+									{searchedTodos.map((todo) => (
+										<TodoItem
+											key={todo.id}
+											id={todo.id}
+											text={todo.text}
+											initialCompleted={todo.completed}
+											isEditing={editingTask === todo.id}
+										/>
+									))}
 								</TodoList>
 								<TodoBoxStatus />
 							</div>

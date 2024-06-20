@@ -68,6 +68,11 @@
 		outline: none;
 	}
 
+	textarea {
+		/* stylelint-disable-next-line property-no-unknown */
+		field-sizing: content;
+	}
+
 	@media (prefers-reduced-motion: reduce) {
 		*,
 		*::before,

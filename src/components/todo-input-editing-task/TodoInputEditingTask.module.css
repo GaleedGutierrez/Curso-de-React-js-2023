@@ -1,12 +1,9 @@
-.m-todo-search__container {
+.m-editing-task__container {
 	display: flex;
 	gap: var(--space-3);
-	align-items: center;
 	inline-size: 100%;
-	max-width: 54rem;
-	max-inline-size: 54rem;
-	padding-block: var(--space-5);
-	padding-inline: var(--space-6);
+	padding-block: calc(var(--space-4) + 0.05rem);
+	padding-inline: var(--space-5);
 	border-radius: var(--border-1);
 	background-color: var(--background-color-1);
 	line-height: initial;
@@ -25,7 +22,7 @@
 	}
 
 	&:focus-within {
-		outline: light-dark(
+		border: light-dark(
 				var(--bright-blue-accessibility),
 				var(--cyan-accessibility)
 			)
@@ -40,7 +37,7 @@
 	}
 }
 
-.m-todo-search__input {
+.m-editing-task__input {
 	flex-grow: 1;
 	inline-size: 20rem;
 	border: none;

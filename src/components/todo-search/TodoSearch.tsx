@@ -17,8 +17,7 @@ export function TodoAddNewTask(): JSX.Element {
 			className={styles['m-todo-search__container']}
 			htmlFor="new-todo"
 		>
-			<input
-				type="text"
+			<textarea
 				placeholder="Create a new task…"
 				className={styles['m-todo-search__input']}
 				id="new-todo"
@@ -28,7 +27,8 @@ export function TodoAddNewTask(): JSX.Element {
 
 					setSearchValue(VALUE);
 				}}
-			/>
+				name="new-todo"
+			></textarea>
 		</label>
 	);
 }

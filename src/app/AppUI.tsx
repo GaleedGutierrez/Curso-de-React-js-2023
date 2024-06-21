@@ -4,7 +4,7 @@ import { TodoEmpty } from '@components/todo-empty/TodoEmpty';
 import { TodoItem } from '@components/todo-item/TodoItem';
 import { TodoList } from '@components/todo-list/TodoList';
 import { TodoAddNewTask } from '@components/todo-search/TodoSearch';
-import { TodoContext } from '@src/context/todo-context/TodoContext';
+import { TodoContext } from '@src/context/TodoContext';
 import { useContext } from 'react';
 
 import styles from './App.module.css';

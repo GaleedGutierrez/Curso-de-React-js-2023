@@ -1,4 +1,4 @@
-import { TodoContext } from '@src/context/todo-context/TodoContext';
+import { TodoContext } from '@src/context/TodoContext';
 import { useContext } from 'react';
 
 import styles from './TodoSearch.module.css';

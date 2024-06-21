@@ -1,4 +1,4 @@
-import { TodoContext } from '@src/context/todo-context/TodoContext';
+import { TodoContext } from '@src/context/TodoContext';
 import { FC, useContext, useState } from 'react';
 
 import { TodoInputEditingTask } from '../todo-input-editing-task/TodoInputEditingTask';
@@ -46,12 +46,18 @@ export const TodoItem: FC<Props> = ({
 		setEditingTask(id);
 	}
 
-	const { deleteTask, setLeftTodos, updateStatusTask, setEditingTask } =
-		TODO_CONTEXT;
+	const {
+		deleteTask,
+		setLeftTodos,
+		updateStatusTask,
+		setEditingTask,
+		todos,
+		setTodos,
+	} = TODO_CONTEXT;
 	const updateIsCompleted = (): void => {
 		setIsCompleted(!IS_COMPLETED);
 		setLeftTodos((prev) => (IS_COMPLETED ? prev + 1 : prev - 1));
-		updateStatusTask(id, !IS_COMPLETED);
+		updateStatusTask({ todos, id, completed: !IS_COMPLETED, setTodos });
 	};
 
 	return (
@@ -86,7 +92,7 @@ export const TodoItem: FC<Props> = ({
 						className={styles['m-todo-item__close-button']}
 						aria-label="Delete task"
 						onClick={() => {
-							deleteTask(id);
+							deleteTask({ id, todos, setTodos });
 						}}
 					>
 						<CrossIcon />

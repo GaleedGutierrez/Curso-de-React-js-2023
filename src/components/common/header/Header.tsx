@@ -1,6 +1,6 @@
 import { MoonIcon } from '@components/ui/atoms/icons/moon-icon/MoonIcon';
 import { SunIcon } from '@components/ui/atoms/icons/sun-icon/SunIcon';
-import { TodoContext } from '@src/context/todo-context/TodoContext';
+import { TodoContext } from '@src/context/TodoContext';
 import { Theme } from '@src/types/enums';
 import { useContext } from 'react';
 
@@ -14,7 +14,8 @@ export function Header(): JSX.Element {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-	const { theme, changeTheme } = TODO_CONTEXT;
+	const { theme, changeTheme, body, darkThemePreference, setTheme } =
+		TODO_CONTEXT;
 
 	return (
 		<header className={styles['g-header']}>
@@ -22,7 +23,14 @@ export function Header(): JSX.Element {
 			<button
 				className={styles['g-header__theme-icon']}
 				aria-label="Change theme"
-				onClick={() => changeTheme()}
+				onClick={() =>
+					changeTheme({
+						body,
+						darkThemePreference,
+						useSystemTheme: false,
+						setTheme,
+					})
+				}
 			>
 				{theme === Theme.Dark ? <SunIcon /> : <MoonIcon />}
 			</button>

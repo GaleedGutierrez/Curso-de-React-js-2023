@@ -1,11 +1,11 @@
 import { TodoButtonClearCompleted } from '@components/todo-button-clear-completed/TodoButtonClearCompleted';
 import { TodoItemsLeft } from '@components/todo-items-left/TodoItemsLeft';
-import { TodoContext } from '@src/context/todo-context/TodoContext';
+import { TodoContext } from '@src/context/TodoContext';
 import { useContext } from 'react';
 
 import styles from './TodoBoxStatus.module.css';
 
-function TodoBoxStatus(): JSX.Element {
+export function TodoBoxStatus(): JSX.Element {
 	const TODO_CONTEXT = useContext(TodoContext);
 
 	if (!TODO_CONTEXT) {
@@ -44,5 +44,3 @@ function TodoBoxStatus(): JSX.Element {
 		</div>
 	);
 }
-
-export { TodoBoxStatus };

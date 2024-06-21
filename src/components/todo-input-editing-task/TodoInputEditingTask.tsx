@@ -1,14 +1,62 @@
-import { TodoContext } from '@src/context/todo-context/TodoContext';
+import { TodoContext } from '@src/context/TodoContext';
+import { TaskId } from '@src/types/enums';
+import { Task } from '@src/types/interfaces';
+import { DeleteTaskParams } from '@src/utils/deleteTask';
+import { updateTask } from '@src/utils/updateTask';
 import { FC, useContext, useState } from 'react';
 
 import styles from './TodoInputEditingTask.module.css';
 
+// Types
 interface Props {
 	isEditing: boolean;
 	lastValue: string;
-	id: `${string}-${string}-${string}-${string}-${string}`;
+	id: Uuid;
 }
 
+interface handleKeyUp {
+	event: React.KeyboardEvent<HTMLTextAreaElement>;
+	id: Uuid;
+	todos: Task[];
+	setTodos: (newItem: Task[]) => void;
+	deleteTask: ({ todos, setTodos, id }: DeleteTaskParams) => void;
+	setEditingTask: React.Dispatch<React.SetStateAction<Uuid>>;
+}
+
+// Handlers
+function handleKeyUp({
+	event,
+	id,
+	todos,
+	setTodos,
+	deleteTask,
+	setEditingTask,
+}: handleKeyUp): void {
+	const KEY = event.code;
+
+	if (!(KEY === 'Enter') && !(KEY === 'NumpadEnter')) {
+		return;
+	}
+
+	const NEW_TEXT = event.currentTarget.value.trim();
+
+	if (!NEW_TEXT) {
+		deleteTask({ id, todos, setTodos });
+		setEditingTask(TaskId.Base);
+
+		return;
+	}
+
+	updateTask({
+		todos,
+		setTodos,
+		id,
+		newText: NEW_TEXT,
+	});
+	setEditingTask(TaskId.Base);
+}
+
+// Component
 export const TodoInputEditingTask: FC<Props> = ({
 	isEditing,
 	lastValue,
@@ -21,7 +69,7 @@ export const TodoInputEditingTask: FC<Props> = ({
 		return <></>;
 	}
 
-	const { updateTask, setEditingTask, deleteTask } = TODO_CONTEXT;
+	const { setEditingTask, deleteTask, todos, setTodos } = TODO_CONTEXT;
 
 	return (
 		<label className={styles['m-editing-task__container']}>
@@ -35,21 +83,16 @@ export const TodoInputEditingTask: FC<Props> = ({
 
 					setNewTask(VALUE);
 				}}
-				onKeyUp={(event) => {
-					const KEY = event.code;
-
-					if (KEY === 'Enter' || KEY === 'NumpadEnter') {
-						const NEW_TEXT = event.currentTarget.value.trim();
-
-						if (NEW_TEXT === '') {
-							deleteTask(id);
-						} else {
-							updateTask(id, NEW_TEXT);
-						}
-
-						setEditingTask('0-0-0-0-0');
-					}
-				}}
+				onKeyUp={(event) =>
+					handleKeyUp({
+						event,
+						id,
+						todos,
+						setTodos,
+						deleteTask,
+						setEditingTask,
+					})
+				}
 			></textarea>
 		</label>
 	);

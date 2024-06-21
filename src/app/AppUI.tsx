@@ -3,7 +3,7 @@ import { TodoBoxStatus } from '@components/todo-box-status/TodoBoxStatus';
 import { TodoEmpty } from '@components/todo-empty/TodoEmpty';
 import { TodoItem } from '@components/todo-item/TodoItem';
 import { TodoList } from '@components/todo-list/TodoList';
-import { TodoAddNewTask } from '@components/todo-search/TodoSearch';
+import { TodoAddNewTask } from '@src/components/todo-add-new-task/TodoAddNewTask';
 import { TodoContext } from '@src/context/TodoContext';
 import { useContext } from 'react';
 
@@ -17,7 +17,7 @@ export function AppUI(): JSX.Element {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-	const { searchedTodos, editingTask } = TODO_CONTEXT;
+	const { editingTask, todos } = TODO_CONTEXT;
 
 	return (
 		<div className={styles['app-container']}>
@@ -26,12 +26,12 @@ export function AppUI(): JSX.Element {
 			<main>
 				<TodoAddNewTask />
 				<section>
-					{searchedTodos.length === 0 && <TodoEmpty />}
-					{searchedTodos.length !== 0 && (
+					{todos.length === 0 && <TodoEmpty />}
+					{todos.length !== 0 && (
 						<>
 							<div className={styles['g-todo-container']}>
 								<TodoList>
-									{searchedTodos.map((todo) => (
+									{todos.map((todo) => (
 										<TodoItem
 											key={todo.id}
 											id={todo.id}

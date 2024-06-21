@@ -7,9 +7,6 @@ export interface Task {
 export interface ITodoContext {
 	todos: Task[];
 	setTodos: (newItem: Task[]) => void;
-	searchValue: string;
-	setSearchValue: React.Dispatch<React.SetStateAction<string>>;
-	searchedTodos: Task[];
 	deleteTask: ({ todos, setTodos, id }: DeleteTaskParams) => void;
 	setLeftTodos: React.Dispatch<React.SetStateAction<number>>;
 	updateStatusTask: ({

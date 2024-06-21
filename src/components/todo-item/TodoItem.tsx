@@ -27,12 +27,16 @@ export const TodoItem: FC<Props> = ({
 		return <></>;
 	}
 
-	function handleDoubleClick(
-		setEditingTask: React.Dispatch<
-			React.SetStateAction<`${string}-${string}-${string}-${string}-${string}`>
-		>,
-		id: `${string}-${string}-${string}-${string}-${string}`,
-	): void {
+	const {
+		deleteTask,
+		setLeftTodos,
+		updateStatusTask,
+		setEditingTask,
+		todos,
+		setTodos,
+	} = TODO_CONTEXT;
+
+	function handleDoubleClick(): void {
 		const CURRENT_TIME = new Date().getTime();
 		const TAP_LENGTH = CURRENT_TIME - lastTap;
 
@@ -46,15 +50,7 @@ export const TodoItem: FC<Props> = ({
 		setEditingTask(id);
 	}
 
-	const {
-		deleteTask,
-		setLeftTodos,
-		updateStatusTask,
-		setEditingTask,
-		todos,
-		setTodos,
-	} = TODO_CONTEXT;
-	const updateIsCompleted = (): void => {
+	const updateCompleted = (): void => {
 		setIsCompleted(!IS_COMPLETED);
 		setLeftTodos((prev) => (IS_COMPLETED ? prev + 1 : prev - 1));
 		updateStatusTask({ todos, id, completed: !IS_COMPLETED, setTodos });
@@ -74,15 +70,13 @@ export const TodoItem: FC<Props> = ({
 						<label className={styles['m-todo-item__label']}>
 							<CheckboxIcon
 								isCompleted={IS_COMPLETED}
-								updateIsCompleted={updateIsCompleted}
+								updateIsCompleted={updateCompleted}
 							/>
 						</label>
 						<span
 							className={styles['m-todo-item__task']}
 							// onDoubleClickCapture={handleDoubleClick}
-							onTouchEndCapture={() =>
-								handleDoubleClick(setEditingTask, id)
-							}
+							onTouchEndCapture={handleDoubleClick}
 						>
 							{IS_COMPLETED ? <s>{text}</s> : text}
 						</span>

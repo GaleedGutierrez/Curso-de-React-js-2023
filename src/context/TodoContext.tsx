@@ -4,7 +4,6 @@ import { ITodoContext, Task } from '@src/types/interfaces';
 import { changeTheme } from '@src/utils/changeTheme';
 import { deleteTask } from '@src/utils/deleteTask';
 import { isThemeBrowserDark } from '@src/utils/isThemeBrowserDark';
-import { searchTodos } from '@src/utils/searchTodos';
 import { updateStatusTask } from '@src/utils/updateStatusTask';
 import { updateTask } from '@src/utils/updateTask';
 import { getLengthLeftTodo } from '@utils/getLengthLeftTodo';
@@ -31,19 +30,17 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 
 	// States
 	const [TODOS, setTodos] = useLocalStorageList<Task>(CURRENT_STORAGE_KEY);
-	const [SEARCH_VALUE, setSearchValue] = useState('');
 	const [LEFT_TODOS, setLeftTodos] = useState(getLengthLeftTodo(TODOS));
 	const [THEME, setTheme] = useState(
 		DARK_THEME_PREFERENCE.matches ? Theme.Dark : Theme.Light,
 	);
 	const [EDITING_TASK, setEditingTask] = useState<Task['id']>(TaskId.Base);
 	// Functions
-	const SEARCHED_TODOS = searchTodos(TODOS, SEARCH_VALUE);
 
 	// Effects
 	useEffect(() => {
-		setLeftTodos(getLengthLeftTodo(SEARCHED_TODOS));
-	}, [SEARCHED_TODOS]);
+		setLeftTodos(getLengthLeftTodo(TODOS));
+	}, [TODOS]);
 
 	useEffect(() => {
 		DARK_THEME_PREFERENCE.addEventListener('change', () =>
@@ -97,9 +94,6 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 	const CONTEXT_VALUE = {
 		todos: TODOS,
 		setTodos,
-		searchValue: SEARCH_VALUE,
-		setSearchValue,
-		searchedTodos: SEARCHED_TODOS,
 		deleteTask,
 		setLeftTodos,
 		updateStatusTask,

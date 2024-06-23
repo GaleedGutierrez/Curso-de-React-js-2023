@@ -1,5 +1,5 @@
 import { useLocalStorageList } from '@hooks/useLocalStorageList';
-import { TaskId, Theme } from '@src/types/enums';
+import { FilterHash, TaskId, Theme } from '@src/types/enums';
 import { ITodoContext, Task } from '@src/types/interfaces';
 import { changeTheme } from '@src/utils/changeTheme';
 import { deleteTask } from '@src/utils/deleteTask';
@@ -21,6 +21,8 @@ BODY.classList.add(CURRENT_THEME);
 
 export const TodoContext = createContext<ITodoContext | undefined>(undefined);
 
+globalThis.location.hash = FilterHash.All;
+
 export const TodoContextProvider: FC<Props> = ({ children }) => {
 	// Global variables
 	const CURRENT_STORAGE_KEY = 'todoAppV1';
@@ -35,7 +37,19 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 		DARK_THEME_PREFERENCE.matches ? Theme.Dark : Theme.Light,
 	);
 	const [EDITING_TASK, setEditingTask] = useState<Task['id']>(TaskId.Base);
+	const [CURRENT_HASH, setCurrentHash] = useState(FilterHash.All);
 	// Functions
+	const FILTERED_TODOS = TODOS.filter((todo) => {
+		if (CURRENT_HASH === FilterHash.Active) {
+			return !todo.completed;
+		}
+
+		if (CURRENT_HASH === FilterHash.Completed) {
+			return todo.completed;
+		}
+
+		return true;
+	});
 
 	// Effects
 	useEffect(() => {
@@ -91,6 +105,24 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 		});
 	});
 
+	useEffect(() => {
+		globalThis.addEventListener('hashchange', () => {
+			const HASH = globalThis.location.hash;
+
+			if ((HASH as FilterHash) === FilterHash.Active) {
+				setCurrentHash(FilterHash.Active);
+			}
+
+			if ((HASH as FilterHash) === FilterHash.Completed) {
+				setCurrentHash(FilterHash.Completed);
+			}
+
+			if ((HASH as FilterHash) === FilterHash.All) {
+				setCurrentHash(FilterHash.All);
+			}
+		});
+	});
+
 	const CONTEXT_VALUE = {
 		todos: TODOS,
 		setTodos,
@@ -106,6 +138,8 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 		updateTask,
 		body: BODY,
 		darkThemePreference: DARK_THEME_PREFERENCE,
+		filteredTodos: FILTERED_TODOS,
+		currentHash: CURRENT_HASH,
 	};
 
 	return (

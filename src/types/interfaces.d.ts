@@ -29,6 +29,8 @@ export interface ITodoContext {
 	updateTask: ({ todos, setTodos, id, newText }: Parameters) => void;
 	body: HTMLBodyElement;
 	darkThemePreference: MediaQueryList;
+	filteredTodos: Task[];
+	currentHash: FilterHash;
 }
 
 export interface ThemeContext {

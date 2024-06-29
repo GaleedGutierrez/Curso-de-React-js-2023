@@ -41,21 +41,27 @@
 /* Organisms */
 
 .background-app {
-	background-image: url("../assets/images/bg-mobile-light.jpg");
 	background-repeat: no-repeat;
 	background-position-y: top;
 	background-size: 100% 200px;
 
-	@media (prefers-color-scheme: dark) {
-		background-image: url("../assets/images/bg-mobile-dark.jpg");
+	@media screen and (width >= 48rem) {
+		background-size: 100% 300px;
 	}
+}
+
+.background-app.light {
+	background-image: url("../assets/images/bg-mobile-light.jpg");
 
 	@media screen and (width >= 48rem) {
 		background-image: url("../assets/images/bg-desktop-light.jpg");
-		background-size: 100% 300px;
+	}
+}
 
-		@media (prefers-color-scheme: dark) {
-			background-image: url("../assets/images/bg-desktop-dark.jpg");
-		}
+.background-app.dark {
+	background-image: url("../assets/images/bg-mobile-dark.jpg");
+
+	@media screen and (width >= 48rem) {
+		background-image: url("../assets/images/bg-desktop-dark.jpg");
 	}
 }

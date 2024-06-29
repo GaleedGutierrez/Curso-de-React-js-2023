@@ -618,3 +618,4 @@ dist-ssr
 *.sketch
 *.fig
 *.xd
+coverage-ts/

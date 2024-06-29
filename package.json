@@ -13,7 +13,8 @@
 		"lint-html": "prettier ./**/*.html --check",
 		"lint-html:fix": "prettier ./**/*.html --write",
 		"stylelint": "stylelint ./**/*.{css,scss}",
-		"stylelint:fix": "stylelint --fix ./**/*.{css,scss}"
+		"stylelint:fix": "stylelint --fix ./**/*.{css,scss}",
+		"ts-coverage": "typescript-coverage-report --threshold=99 -s"
 	},
 	"dependencies": {
 		"react": "^18.3.1",

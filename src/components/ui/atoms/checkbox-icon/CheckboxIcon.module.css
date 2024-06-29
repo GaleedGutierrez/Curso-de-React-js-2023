@@ -47,12 +47,10 @@
 }
 
 .a-checkbox:has(input[type="checkbox"]:focus-visible)::before {
-	outline: var(--border-1) solid var(--bright-blue-accessibility);
+	outline: light-dark(
+			var(--bright-blue-accessibility),
+			var(--cyan-accessibility)
+		)
+		var(--border-1) solid;
 	outline-offset: 0.4rem;
-}
-
-@media (prefers-color-scheme: dark) {
-	.a-checkbox:has(input[type="checkbox"]:focus-visible)::before {
-		outline-color: var(--cyan-accessibility);
-	}
 }

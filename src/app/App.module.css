@@ -6,6 +6,10 @@
 	margin-inline: auto;
 	margin-block-start: 4.8rem;
 
+	section:first-of-type {
+		margin-block-start: var(--space-4);
+	}
+
 	@media screen and (width >= 38.375rem) {
 		gap: var(--space-12);
 	}
@@ -15,7 +19,6 @@
 	border-end-start-radius: var(--border-radius-1);
 	border-end-end-radius: var(--border-radius-1);
 	box-shadow: var(--shadow-1);
-	margin-block-start: var(--space-4);
 
 	@media screen and (width >= 38.375rem) {
 		margin-block-start: var(--space-6);

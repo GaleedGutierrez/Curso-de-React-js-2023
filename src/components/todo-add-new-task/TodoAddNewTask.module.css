@@ -25,26 +25,27 @@
 	}
 
 	&:focus-within {
-		outline: var(--bright-blue-accessibility) solid var(--border-1);
+		outline: light-dark(
+				var(--bright-blue-accessibility),
+				var(--cyan-accessibility)
+			)
+			solid var(--border-1);
 
 		&::before {
-			border-color: var(--outline-color);
-		}
-
-		@media (prefers-color-scheme: dark) {
-			outline-color: var(--cyan-accessibility);
-
-			&::before {
-				border-color: var(--cyan-accessibility);
-			}
+			border-color: light-dark(
+				var(--bright-blue-accessibility),
+				var(--cyan-accessibility)
+			);
 		}
 	}
 }
 
 .m-todo-search__input {
 	flex-grow: 1;
+	inline-size: 20rem;
 	border: none;
 	background-color: var(--background-color-1);
+	resize: none;
 	caret-color: var(--bright-blue);
 
 	&::placeholder {

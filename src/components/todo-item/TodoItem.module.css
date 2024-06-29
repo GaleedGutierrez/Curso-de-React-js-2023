@@ -15,16 +15,24 @@
 		line-height: initial;
 	}
 
+	&:has(.m-todo-item__label input[type="checkbox"]:checked)
+		.m-todo-item__task {
+		color: light-dark(
+			var(--light-grayish-blue),
+			var(--dt-very-dark-grayish-blue)
+		);
+	}
+
 	.m-todo-item__close-button {
 		&:focus-visible {
 			border-radius: var(--border-radius-1);
-			outline: var(--bright-blue-accessibility) solid var(--border-1);
+			outline: light-dark(
+					var(--bright-blue-accessibility),
+					var(--cyan-accessibility)
+				)
+				solid var(--border-1);
 			outline-offset: 0.4rem;
 			opacity: 1;
-
-			@media (prefers-color-scheme: dark) {
-				outline-color: var(--cyan-accessibility);
-			}
 		}
 
 		svg path {
@@ -50,19 +58,15 @@
 	}
 }
 
-.m-todo-item__label {
+.m-todo-item__task-container {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	gap: var(--space-6);
+}
+
+.m-todo-item__label {
 	align-items: center;
 	cursor: pointer;
-
-	&:has(input[type="checkbox"]:checked) .m-todo-item__task {
-		color: light-dark(
-			var(--light-grayish-blue),
-			var(--dt-very-dark-grayish-blue)
-		);
-	}
 }
 
 .m-todo-item__edit-task {
@@ -72,7 +76,9 @@
 .m-todo-item__edit-task--editing {
 	display: initial;
 	flex-basis: 100%;
+	inline-size: 20rem;
 	margin-inline-start: var(--space-11);
+	resize: none;
 	caret-color: var(--bright-blue);
 
 	input {

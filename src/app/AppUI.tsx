@@ -3,8 +3,8 @@ import { TodoBoxStatus } from '@components/todo-box-status/TodoBoxStatus';
 import { TodoEmpty } from '@components/todo-empty/TodoEmpty';
 import { TodoItem } from '@components/todo-item/TodoItem';
 import { TodoList } from '@components/todo-list/TodoList';
-import { TodoAddNewTask } from '@components/todo-search/TodoSearch';
-import { TodoContext } from '@context/todo-context/TodoContext';
+import { TodoAddNewTask } from '@src/components/todo-add-new-task/TodoAddNewTask';
+import { TodoContext } from '@src/context/TodoContext';
 import { useContext } from 'react';
 
 import styles from './App.module.css';
@@ -16,7 +16,8 @@ export function AppUI(): JSX.Element {
 		return <></>;
 	}
 
-	const { searchedTodos } = TODO_CONTEXT;
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+	const { editingTask, todos, filteredTodos } = TODO_CONTEXT;
 
 	return (
 		<div className={styles['app-container']}>
@@ -24,30 +25,31 @@ export function AppUI(): JSX.Element {
 
 			<main>
 				<TodoAddNewTask />
-				<section className={styles['g-todo-container']}>
-					{searchedTodos.length === 0 && <TodoEmpty />}
-					{searchedTodos.length !== 0 && (
+				<section>
+					{todos.length === 0 && <TodoEmpty />}
+					{todos.length !== 0 && (
 						<>
-							<TodoList>
-								{searchedTodos.map(
-									({ text, completed, id }) => (
+							<div className={styles['g-todo-container']}>
+								<TodoList>
+									{filteredTodos.map((todo) => (
 										<TodoItem
-											key={id}
-											id={id}
-											text={text}
-											initialCompleted={completed}
+											key={todo.id}
+											id={todo.id}
+											text={todo.text}
+											initialCompleted={todo.completed}
+											isEditing={editingTask === todo.id}
 										/>
-									),
-								)}
-							</TodoList>
-							<TodoBoxStatus />
-							<p
+									))}
+								</TodoList>
+								<TodoBoxStatus />
+							</div>
+							{/* <p
 								className={
 									styles['app-container__drag-and-drop']
 								}
 							>
 								Drag and drop to reorder list
-							</p>
+							</p> */}
 						</>
 					)}
 				</section>

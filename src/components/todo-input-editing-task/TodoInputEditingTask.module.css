@@ -1,0 +1,51 @@
+.m-editing-task__container {
+	display: flex;
+	gap: var(--space-3);
+	inline-size: 100%;
+	padding-block: calc(var(--space-4) + 0.05rem);
+	padding-inline: var(--space-5);
+	border-radius: var(--border-1);
+	background-color: var(--background-color-1);
+	line-height: initial;
+
+	&::before {
+		display: inline-block;
+		block-size: 2rem;
+		inline-size: 2rem;
+		border: var(--border-025) solid
+			light-dark(
+				var(--very-light-grayish-blue),
+				var(--very-dark-grayish-blue-2)
+			);
+		border-radius: var(--border-radius-circle);
+		content: "";
+	}
+
+	&:focus-within {
+		border: light-dark(
+				var(--bright-blue-accessibility),
+				var(--cyan-accessibility)
+			)
+			solid var(--border-1);
+
+		&::before {
+			border-color: light-dark(
+				var(--bright-blue-accessibility),
+				var(--cyan-accessibility)
+			);
+		}
+	}
+}
+
+.m-editing-task__input {
+	flex-grow: 1;
+	inline-size: 20rem;
+	border: none;
+	background-color: var(--background-color-1);
+	resize: none;
+	caret-color: var(--bright-blue);
+
+	&::placeholder {
+		color: var(--dark-grayish-blue);
+	}
+}

@@ -36,7 +36,7 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 	const [THEME, setTheme] = useState(
 		DARK_THEME_PREFERENCE.matches ? Theme.Dark : Theme.Light,
 	);
-	const [EDITING_TASK, setEditingTask] = useState<Task['id']>(TaskId.Base);
+	const [EDITING_TASK, setEditingTask] = useState<Task['id']>(TaskId.Reset);
 	const [CURRENT_HASH, setCurrentHash] = useState(FilterHash.All);
 	// Functions
 	const FILTERED_TODOS = TODOS.filter((todo) => {
@@ -90,7 +90,7 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 
 			if (!NEW_TEXT) {
 				deleteTask({ todos: TODOS, setTodos, id: TASK_ID });
-				setEditingTask(TaskId.Base);
+				setEditingTask(TaskId.Reset);
 
 				return;
 			}
@@ -101,7 +101,7 @@ export const TodoContextProvider: FC<Props> = ({ children }) => {
 				id: TASK_ID,
 				newText: NEW_TEXT,
 			});
-			setEditingTask(TaskId.Base);
+			setEditingTask(TaskId.Reset);
 		});
 	});
 

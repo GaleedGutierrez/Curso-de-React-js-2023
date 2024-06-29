@@ -36,7 +36,7 @@ export const TodoItem: FC<Props> = ({
 		setTodos,
 	} = TODO_CONTEXT;
 
-	function handleDoubleClick(): void {
+	function handleDoubleTap(): void {
 		const CURRENT_TIME = new Date().getTime();
 		const TAP_LENGTH = CURRENT_TIME - lastTap;
 
@@ -47,6 +47,10 @@ export const TodoItem: FC<Props> = ({
 		}
 
 		lastTap = CURRENT_TIME;
+		setEditingTask(id);
+	}
+
+	function handleDoubleClick(): void {
 		setEditingTask(id);
 	}
 
@@ -75,8 +79,8 @@ export const TodoItem: FC<Props> = ({
 						</label>
 						<span
 							className={styles['m-todo-item__task']}
-							// onDoubleClickCapture={handleDoubleClick}
-							onTouchEndCapture={handleDoubleClick}
+							onDoubleClickCapture={() => handleDoubleClick()}
+							onTouchEndCapture={handleDoubleTap}
 						>
 							{IS_COMPLETED ? <s>{text}</s> : text}
 						</span>

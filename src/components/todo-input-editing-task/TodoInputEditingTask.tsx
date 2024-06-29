@@ -3,7 +3,7 @@ import { TaskId } from '@src/types/enums';
 import { Task } from '@src/types/interfaces';
 import { DeleteTaskParams } from '@src/utils/deleteTask';
 import { updateTask } from '@src/utils/updateTask';
-import { FC, useContext, useState } from 'react';
+import { FC, useContext, useEffect, useRef, useState } from 'react';
 
 import styles from './TodoInputEditingTask.module.css';
 
@@ -42,7 +42,7 @@ function handleKeyUp({
 
 	if (!NEW_TEXT) {
 		deleteTask({ id, todos, setTodos });
-		setEditingTask(TaskId.Base);
+		setEditingTask(TaskId.Reset);
 
 		return;
 	}
@@ -53,7 +53,7 @@ function handleKeyUp({
 		id,
 		newText: NEW_TEXT,
 	});
-	setEditingTask(TaskId.Base);
+	setEditingTask(TaskId.Reset);
 }
 
 // Component
@@ -64,6 +64,16 @@ export const TodoInputEditingTask: FC<Props> = ({
 }) => {
 	const TODO_CONTEXT = useContext(TodoContext);
 	const [newTask, setNewTask] = useState(lastValue);
+	const TEXTAREA_REF = useRef<HTMLTextAreaElement>(null);
+
+	useEffect(() => {
+		if (isEditing && TEXTAREA_REF.current) {
+			const LENGTH = TEXTAREA_REF.current.value.length;
+
+			TEXTAREA_REF.current.focus();
+			TEXTAREA_REF.current.setSelectionRange(LENGTH, LENGTH);
+		}
+	}, [isEditing]);
 
 	if (!TODO_CONTEXT) {
 		return <></>;
@@ -74,7 +84,7 @@ export const TodoInputEditingTask: FC<Props> = ({
 	return (
 		<label className={styles['m-editing-task__container']}>
 			<textarea
-				placeholder=""
+				ref={TEXTAREA_REF}
 				className={`${styles['m-editing-task__input']} ${isEditing && 'editing'}`}
 				id={id}
 				value={newTask}

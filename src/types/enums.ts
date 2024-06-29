@@ -9,7 +9,7 @@ export const enum SystemTheme {
 }
 
 export const enum TaskId {
-	Base = '0-0-0-0-0',
+	Reset = '0-0-0-0-0',
 }
 export const enum FilterHash {
 	All = '#all',

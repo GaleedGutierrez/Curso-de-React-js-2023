@@ -43,13 +43,13 @@ export function AppUI(): JSX.Element {
 								</TodoList>
 								<TodoBoxStatus />
 							</div>
-							<p
+							{/* <p
 								className={
 									styles['app-container__drag-and-drop']
 								}
 							>
 								Drag and drop to reorder list
-							</p>
+							</p> */}
 						</>
 					)}
 				</section>

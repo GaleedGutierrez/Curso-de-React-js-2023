@@ -18,7 +18,7 @@ jobs:
               run: npm ci && npm install @rollup/rollup-linux-x64-gnu --save-optional && npm install -g @lhci/cli@0.14.x
 
             - name: 🏗️ Build App
-              run: npm run build
+              run: npm run build && npm run preview
 
             # - name: 📊 Run Lighthouse
             #   run: lhci autorun
@@ -29,6 +29,6 @@ jobs:
             - name: Audit URLs using Lighthouse
               uses: treosh/lighthouse-ci-action@v7
               with:
-                  urls: http://localhost:33513
+                  urls: http://localhost:4173
                   uploadArtifacts: true # save results as an action artifacts
                   temporaryPublicStorage: true # upload lighthouse audits to google temporary storage

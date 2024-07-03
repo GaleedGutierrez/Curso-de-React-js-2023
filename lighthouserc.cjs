@@ -7,9 +7,9 @@ module.exports = {
 			preset: 'lighthouse:no-pwa',
 			assertions: {
 				// Performance related
-				'unused-javascript': 'warn',
-				'uses-responsive-images': 'warn',
-				'lcp-lazy-loaded': 'warn',
+				// 'unused-javascript': 'warn',
+				// 'uses-responsive-images': 'warn',
+				// 'lcp-lazy-loaded': 'warn',
 				// Not performance related (Accessibility)
 				'tap-targets': 'off',
 				'non-composited-animations': 'off',

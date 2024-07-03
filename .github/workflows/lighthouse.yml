@@ -2,8 +2,6 @@ name: 📈 Performance check (Lighthouse)
 on: [push]
 jobs:
     lighthouseci:
-        env:
-            LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         runs-on: ubuntu-latest
         steps:
             - name: 👍 Checkout
@@ -20,20 +18,7 @@ jobs:
             - name: 🏗️ Build App
               run: npm run build
 
-            - name: 🏃 Run App
-              run: npm run preview
-
-            # - name: 📊 Run Lighthouse
-            #   run: lhci autorun
-            #   env:
-            #       LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-
-            - name: 👍 Checkout
-              uses: actions/checkout@v4
-
-            - name: 📊 Audit URLs using Lighthouse
-              uses: treosh/lighthouse-ci-action@v12
-              with:
-                  urls: http://localhost:4173
-                  uploadArtifacts: true # save results as an action artifacts
-                  temporaryPublicStorage: true # upload lighthouse audits to google temporary storage
+            - name: 📊 Run Lighthouse
+              run: lhci autorun
+              env:
+                  LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

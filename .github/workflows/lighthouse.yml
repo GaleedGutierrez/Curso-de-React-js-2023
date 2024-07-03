@@ -13,7 +13,7 @@ jobs:
                   node-version: 20.11.0
 
             - name: 📥 Install Dependecies
-              run: npm install && npm install -g @lhci/cli@0.14.x
+              run: npm install && npm install @rollup/rollup-linux-x64-gnu --save-optional && npm install -g @lhci/cli@0.14.x
 
             - name: 🏗️ Build App
               run: npm run build

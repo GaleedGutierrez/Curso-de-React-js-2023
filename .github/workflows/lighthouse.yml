@@ -3,8 +3,6 @@ on: [push]
 jobs:
     lighthouseci:
         runs-on: ubuntu-latest
-        env:
-            LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         steps:
             - name: 👍 Checkout
               uses: actions/checkout@v3
@@ -18,17 +16,17 @@ jobs:
               run: npm ci && npm install @rollup/rollup-linux-x64-gnu --save-optional && npm install -g @lhci/cli@0.14.x
 
             - name: 🏗️ Build App
-              run: npm run build && npm run preview
+              run: npm run build
 
-            # - name: 📊 Run Lighthouse
-            #   run: lhci autorun
-            #   env:
-            #     LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+            - name: 📊 Run Lighthouse
+              run: lhci autorun
+              env:
+                  LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
-            - uses: actions/checkout@v2
-            - name: Audit URLs using Lighthouse
-              uses: treosh/lighthouse-ci-action@v7
-              with:
-                  urls: http://localhost:4173
-                  uploadArtifacts: true # save results as an action artifacts
-                  temporaryPublicStorage: true # upload lighthouse audits to google temporary storage
+            # - uses: actions/checkout@v2
+            # - name: Audit URLs using Lighthouse
+            #   uses: treosh/lighthouse-ci-action@v7
+            #   with:
+            #       urls: http://localhost:4173
+            #       uploadArtifacts: true # save results as an action artifacts
+            #       temporaryPublicStorage: true # upload lighthouse audits to google temporary storage

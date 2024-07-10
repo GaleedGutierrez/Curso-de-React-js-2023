@@ -22,6 +22,6 @@ export function addNewTask({
 	};
 	const NEW_TODOS = [...todos];
 
-	NEW_TODOS.unshift(NEW_TASK);
+	NEW_TODOS.push(NEW_TASK);
 	setTodos(NEW_TODOS);
 }

@@ -20,7 +20,7 @@ export function TodoAddNewTask(): JSX.Element {
 			htmlFor="new-todo"
 		>
 			<textarea
-				placeholder="Create a new task…"
+				placeholder="Create a new task..."
 				className={styles['m-todo-search__input']}
 				id="new-todo"
 				value={NEW_VALUE}

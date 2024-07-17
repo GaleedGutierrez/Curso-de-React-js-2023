@@ -332,8 +332,6 @@ button,
 [type="reset"],
 [type="submit"] {
 	appearance: button;
-	appearance: button;
-	appearance: button;
 }
 
 button::-moz-focus-inner,
@@ -373,20 +371,14 @@ textarea {
 [type="search"] {
 	outline-offset: -2px;
 	appearance: textfield;
-	appearance: textfield;
-	appearance: textfield;
 }
 
 [type="search"]::-webkit-search-decoration {
-	appearance: none;
-	appearance: none;
 	appearance: none;
 }
 
 ::-webkit-file-upload-button {
 	font: inherit;
-	appearance: button;
-	appearance: button;
 	appearance: button;
 }
 

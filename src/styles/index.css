@@ -51,17 +51,17 @@
 }
 
 .background-app.light {
-	background-image: url("../assets/images/bg-mobile-light.jpg");
+	background-image: url("@images/bg-mobile-light.jpg");
 
 	@media screen and (width >= 48rem) {
-		background-image: url("../assets/images/bg-desktop-light.jpg");
+		background-image: url("@images/bg-desktop-light.jpg");
 	}
 }
 
 .background-app.dark {
-	background-image: url("../assets/images/bg-mobile-dark.jpg");
+	background-image: url("@images/bg-mobile-dark.jpg");
 
 	@media screen and (width >= 48rem) {
-		background-image: url("../assets/images/bg-desktop-dark.jpg");
+		background-image: url("@images/bg-desktop-dark.jpg");
 	}
 }

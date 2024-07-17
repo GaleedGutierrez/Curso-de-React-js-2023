@@ -16,7 +16,12 @@ export default defineConfig({
 			'@templates': fileURLToPath(
 				new URL('./src/templates/', import.meta.url),
 			),
-			'@images': fileURLToPath(new URL('./src/images/', import.meta.url)),
+			'@images': fileURLToPath(
+				new URL('./src/assets/images/', import.meta.url),
+			),
+			'@fonts': fileURLToPath(
+				new URL('./src/assets/fonts/', import.meta.url),
+			),
 			'@components': fileURLToPath(
 				new URL('./src/components/', import.meta.url),
 			),

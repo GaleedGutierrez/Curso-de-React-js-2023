@@ -11,11 +11,14 @@
 		"prepare": "husky",
 		"lint": "eslint ./**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}",
 		"lint:fix": "eslint --fix ./**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}",
-		"lint-html": "prettier ./**/*.html --check",
-		"lint-html:fix": "prettier ./**/*.html --write",
+		"lint-html": "prettier ./**/*.html --check  --ignore-path .gitignore",
+		"lint-html:fix": "prettier ./**/*.html --write  --ignore-path .gitignore",
+		"lint-md": "markdownlint-cli2 **/*.md #node_modules",
+		"lint-md:fix": "markdownlint-cli2 --fix **/*.md #node_modules",
 		"stylelint": "stylelint ./**/*.{css,scss}",
 		"stylelint:fix": "stylelint --fix ./**/*.{css,scss}",
-		"test:e2e": "playwright test"
+		"test:e2e": "playwright test",
+		"test:performance": "lighthouse http://localhost:4173/ --view"
 	},
 	"dependencies": {
 		"react": "^18.3.1",
@@ -52,6 +55,7 @@
 		"eslint-plugin-tsdoc": "^0.2.17",
 		"eslint-plugin-unused-imports": "^3.2.0",
 		"husky": "^9.0.11",
+		"markdownlint-cli2": "^0.13.0",
 		"prettier": "^3.2.5",
 		"react-ga4": "^2.1.0",
 		"stylelint": "^16.6.0",

@@ -18,10 +18,12 @@ quote_type = single
 
 [*.{yml, yaml}]
 indent_style = space
+indent_size = 2
 
 [*.md]
-max_line_length = off
 trim_trailing_whitespace = false
+indent_style = space
+indent_size = 2
 
 [CHANGELOG.md]
 indent_size = false

@@ -3,7 +3,7 @@ on: push
 jobs:
     lint:
         runs-on: ubuntu-latest
-        name: ESLint - StyleLint
+        name: ESLint - StyleLint - Prettier - MarkdownLint
         steps:
             - name: 👍 Checkout
               uses: actions/checkout@v2
@@ -19,3 +19,6 @@ jobs:
 
             - name: 🔍 HTML
               run: npm run lint-html
+
+            - name: 📄 Markdown
+              run: npm run lint-md

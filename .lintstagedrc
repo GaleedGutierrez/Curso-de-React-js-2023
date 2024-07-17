@@ -1,5 +1,6 @@
 {
-	"*.(j|t)s": "npm run lint:fix --ignore-path .gitignore",
+	"*.(j|t)s": "npm run lint:fix",
 	"*{css,s(a|c)ss}": "npm run stylelint:fix",
-	"*.html": "npm run lint-html:fix --ignore-path .gitignore"
+	"*.html": "npm run lint-html:fix",
+	"*.md": "npm run lint-md:fix"
 }

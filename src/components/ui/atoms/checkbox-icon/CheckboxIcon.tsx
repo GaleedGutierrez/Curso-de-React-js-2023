@@ -14,9 +14,7 @@ export const CheckboxIcon: FC<Props> = ({ isCompleted, updateIsCompleted }) => (
 			defaultChecked={isCompleted}
 			className="is-sr-only"
 			onClick={updateIsCompleted}
-			aria-label={
-				isCompleted ? 'Mark task as active' : 'Mark task as completed'
-			}
+			aria-label={isCompleted ? 'Uncheck task' : 'Check task'}
 		/>
 	</div>
 );

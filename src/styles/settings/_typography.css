@@ -52,18 +52,15 @@
 
 @font-face {
 	font-family: "Josefin Sans";
-	src: url("/src/assets/fonts/Josefin_Sans/JosefinSans-Regular.eot");
+	src: url("@fonts/Josefin_Sans/JosefinSans-Regular.eot");
 	src:
 		local("Josefin Sans Regular"),
 		local("JosefinSans-Regular"),
-		url("/src/assets/fonts/Josefin_Sans/JosefinSans-Regular.eot?#iefix")
+		url("@fonts/Josefin_Sans/JosefinSans-Regular.eot?#iefix")
 			format("embedded-opentype"),
-		url("/src/assets/fonts/Josefin_Sans/JosefinSans-Regular.woff2")
-			format("woff2"),
-		url("/src/assets/fonts/Josefin_Sans/JosefinSans-Regular.woff")
-			format("woff"),
-		url("/src/assets/fonts/Josefin_Sans/JosefinSans-Regular.ttf")
-			format("truetype");
+		url("@fonts/Josefin_Sans/JosefinSans-Regular.woff2") format("woff2"),
+		url("@fonts/Josefin_Sans/JosefinSans-Regular.woff") format("woff"),
+		url("@fonts/Josefin_Sans/JosefinSans-Regular.ttf") format("truetype");
 	font-style: normal;
 	font-weight: normal;
 	font-display: swap;
@@ -71,18 +68,15 @@
 
 @font-face {
 	font-family: "Josefin Sans";
-	src: url("/src/assets/fonts/Josefin_Sans/JosefinSans-Bold.eot");
+	src: url("@fonts/Josefin_Sans/JosefinSans-Bold.eot");
 	src:
 		local("Josefin Sans Bold"),
 		local("JosefinSans-Bold"),
-		url("/src/assets/fonts/Josefin_Sans/JosefinSans-Bold.eot?#iefix")
+		url("@fonts/Josefin_Sans/JosefinSans-Bold.eot?#iefix")
 			format("embedded-opentype"),
-		url("/src/assets/fonts/Josefin_Sans/JosefinSans-Bold.woff2")
-			format("woff2"),
-		url("/src/assets/fonts/Josefin_Sans/JosefinSans-Bold.woff")
-			format("woff"),
-		url("/src/assets/fonts/Josefin_Sans/JosefinSans-Bold.ttf")
-			format("truetype");
+		url("@fonts/Josefin_Sans/JosefinSans-Bold.woff2") format("woff2"),
+		url("@fonts/Josefin_Sans/JosefinSans-Bold.woff") format("woff"),
+		url("@fonts/Josefin_Sans/JosefinSans-Bold.ttf") format("truetype");
 	font-style: normal;
 	font-weight: bold;
 	font-display: swap;

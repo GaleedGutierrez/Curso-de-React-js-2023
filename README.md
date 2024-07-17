@@ -1,75 +1,151 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# Curso de React JS <!-- omit in toc -->
 
-¡Hola, Platzinauta!
+## Tabla de contenido <!-- omit in toc -->
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+- [🎯 Sobre el proyecto](#-sobre-el-proyecto)
+- [📚 Lo que he aprendido](#-lo-que-he-aprendido)
+- [🌐 Tecnologías](#-tecnologías)
+- [👨‍💻 ¿Querés probar el proyecto?](#-querés-probar-el-proyecto)
+- [📄 Licencia](#-licencia)
+- [✒️ Autor](#️-autor)
+- [🔗 Redes Sociales](#-redes-sociales)
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
+## 🎯 Sobre el proyecto
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+![Screenshot del proyecto](./public/todo-app-react.webp
+"Screenshot del proyecto")
+Este proyecto es el primero realizado en React, desarrollado gracias a los
+conocimiento adquiridos en el [Curso de React](https://platzi.com/cursos/react/
+"Curso de React") de [Platzi](https://platzi.com/ "Platzi"), dictado por
+[Juan DC](https://www.linkedin.com/in/juandc/ "Juan DC").
 
-## Getting Started with Create React App
+En este proyecto, he construido una aplicación web para la gestión de tareas,
+comúnmente conocida como una TODO App. El objetivo principal de esta aplicación
+es adentrarse en el mundo de React y comprender cómo funciona esta tecnología.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### ✨ Características del proyecto <!-- omit in toc -->
 
-## Available Scripts
+- **Registro de tareas**: Permite a los usuarios añadir, editar y eliminar
+tareas
+- **Interfaz amigable**: Diseño intuitivo y fácil de usar.
+- **Funcionalidad en tiempo real**: Actualización instantánea del estado de las
+tareas.
 
-In the project directory, you can run:
+- **Filtrado de tareas**: Los usuarios pueden filtrar las tareas por:
+  - **Active**: Mostrar solo las tareas pendientes.
+  - **Completed**: Mostrar solo las tareas completadas.
+  - **All**: Mostrar todas las tareas, independientemente de su estado.
 
-### `npm start`
+## 📚 Lo que he aprendido
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Durante el desarrollo de esta aplicación, he aprendido sobre:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Qué es React**: Fundamentos y ventajas de utilizar esta biblioteca
+de JavaScript.
+- **Componentes en React**: Creación y uso de componentes reutilizables.
+- **Manejo de eventos en React**: Cómo manejar eventos del usuario dentro de los
+componentes.
+- **Gestión del estado con Hooks y Custom Hooks**: Utilización de useState y
+creación de hooks personalizados.
+- **Uso de React Context**: Manejo de estados globales y contextos compartidos
+entre componentes.
+- **Organización de archivos**: Estructuración de un proyecto en React para
+mantener un código limpio y mantenible.
 
-### `npm run build`
+## 🌐 Tecnologías
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para el desarrollo de este proyecto, se emplearon las siguientes tecnologías:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Tecnologías usadas](https://skillicons.dev/icons?i=react,ts,vite,css
+"Tecnologías usadas")
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ⚛️ **React**: Para gestionar la interactividad y la lógica de las tareas.
+- 🔵 **TypeScript**: Para asegurar la robustez en el código.
+- 🌸 **CSS Modules**: Para aplicar los estilos a los componentes y el diseño
+en general.
+- 📦 **ViteJS**: Como herramienta de desarrollo, que facilita la configuración
+y construcción del proyecto.
+- 🎭 **Playwright**: Para realizar pruebas de usabilidad, garantizando una
+experiencia de usuario óptima.
 
-### `npm run eject`
+### Otros <!-- omit in toc -->
+<!-- markdownlint-disable-next-line MD013 -->
+<!-- ![Playwright logo](https://img.shields.io/static/v1?style=for-the-badge&message=Playwright&color=052c06&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjU2cHgiIGhlaWdodD0iMTkycHgiIHZpZXdCb3g9IjAgMCAyNTYgMTkyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4KICAgIDx0aXRsZT5QbGF5d3JpZ2h0PC90aXRsZT4KICAgIDxnPgogICAgICAgIDxwYXRoIGQ9Ik04NC4zODAyNTgsMTA4LjM1MTYwOCBDNzQuODIzODQ5NSwxMTEuMDYzNjgyIDY4LjU1NDI2NCwxMTUuODE4ODk3IDY0LjQyNDIyODQsMTIwLjU3MDQwMyBDNjguMzc5OTg1MywxMTcuMTA4NTU5IDczLjY3ODgwMSwxMTMuOTMxNDk1IDgwLjgyNjQ1NDcsMTExLjkwNTQxMSBDODguMTM3MjYyOSwxMDkuODMzMzQ4IDk0LjM3NDIxNzQsMTA5Ljg0ODE4MSA5OS41Mjc2NzcyLDExMC44NDI2ODIgTDk5LjUyNzY3NzIsMTA2LjgxMjc2NCBDOTUuMTMxNDAzLDEwNi40MTA4MSA5MC4wOTE0MDk4LDEwNi43MzExODcgODQuMzgwMjU4LDEwOC4zNTE2MDggWiBNNjMuOTg3NDE5MSw3NC40NzQ3ODUxIEwyOC40OTY0NzgyLDgzLjgyNTAyNTYgQzI4LjQ5NjQ3ODIsODMuODI1MDI1NiAyOS4xNDMzMTE5LDg0LjczODY5MTIgMzAuMzQxMDE0OCw4NS45NTc5MDA5IEw2MC40MzI4NzQyLDc4LjAyODU4ODQgQzYwLjQzMjg3NDIsNzguMDI4NTg4NCA2MC4wMDY0NDc0LDgzLjUyMzE4OTYgNTYuMzAzMzU3Nyw4OC40Mzg1OTIxIEM2My4zMDgxMDI4LDgzLjEzOTAzNDggNjMuOTg3NDE5MSw3NC40NzQ3ODUxIDYzLjk4NzQxOTEsNzQuNDc0Nzg1MSBaIE05My42OTU2NDI3LDE1Ny44ODQ1OTYgQzQzLjc1MDQ2NywxNzEuMzM2NjkxIDE3LjMyNjEwMDEsMTEzLjQ1NTM4IDkuMzI1ODg5NTQsODMuNDEyNjg5NSBDNS42Mjk2OTY3Niw2OS41NDUyOTIxIDQuMDE2MTcyMTYsNTkuMDQyNTg3IDMuNTg2MTExNTIsNTIuMjY0OTk3NSBDMy41Mzk5MDkxMSw1MS41NjEyMDggMy41NjEyNjc1Myw1MC45Njc5MTg2IDMuNjExMDI5NjgsNTAuNDI0MzE3MyBDMS4wMjAxMzUsNTAuNTgwNzk3MyAtMC4yMjAyODQ3NTQsNTEuOTI3NTY0MiAwLjAzMjA4NTcxMTcsNTUuODE5NTQyNSBDMC40NjIxNDYzNDQsNjIuNTkzNDIzOSAyLjA3NTY3MDk1LDczLjA5NTM4NzMgNS43NzE4NjM3Myw4Ni45NjcyMzQ0IEMxMy43Njg1MTQ1LDExNy4wMDU0NzUgNDAuMTk2NDQxMiwxNzQuODg2Nzg2IDkwLjE0MTgzOTQsMTYxLjQzNDY5MSBDMTAxLjAxMzEyNSwxNTguNTA2MDY3IDEwOS4xODA0OTUsMTUzLjE3MTY1NCAxMTUuMzExMzk5LDE0Ni4zNjIxNzUgQzEwOS42NjAzMTgsMTUxLjQ2NTk0NyAxMDIuNTg3NTY3LDE1NS40ODU0ODIgOTMuNjk1NjQyNywxNTcuODg0NTk2IFogTTEwMy4wODE0ODEsMzkuMDUwOTYgTDEwMy4wODE0ODEsNDIuNjA1NTA1IEwxMjIuNjcxODk2LDQyLjYwNTUwNSBDMTIyLjI2OTk0Miw0MS4zNDY5ODk5IDEyMS44NjUwMjIsNDAuMjEzMDY1NiAxMjEuNDYzMDY4LDM5LjA1MDk2IEwxMDMuMDgxNDgxLDM5LjA1MDk2IFoiIGZpbGw9IiMyRDQ1NTIiPjwvcGF0aD4KICAgICAgICA8cGF0aCBkPSJNMTI3LjA1MDM3MSw2OC4zMjUzNDA4IEMxMzUuODYwNzE4LDcwLjgyNzUzODcgMTQwLjUyMDI2NSw3Ny4wMDQ0MjI3IDE0Mi45ODMxNTcsODIuNDcwODQyNiBMMTUyLjgwNjU0Niw4NS4yNjA3ODU5IEMxNTIuODA2NTQ2LDg1LjI2MDc4NTkgMTUxLjQ2NjQ1NCw2Ni4xMjk0Mjg1IDEzNC4xNjE2ODYsNjEuMjE0MDI2MSBDMTE3Ljk3MzA0NCw1Ni42MTQ1NTAyIDEwOC4wMTA5NzQsNzAuMjA5MDM0NSAxMDYuNzk5MTgsNzEuOTY4MTM3NSBDMTExLjUwODQxNCw2OC42MTMwODYxIDExOC4zODUzOCw2NS44NjYxNTYzIDEyNy4wNTAzNzEsNjguMzI1MzQwOCBaIE0yMDUuMjQ2NjUyLDgyLjU1OTA5NDQgQzE4OS4wNDMxNzcsNzcuOTM4ODUzNCAxNzkuMDg0ODE1LDkxLjU2MTUxOSAxNzcuODkwODIxLDkzLjI5NjE0ODggQzE4Mi42MDM3NjMsODkuOTQ0ODA1NCAxODkuNDc3MDIsODcuMTk3MTM0MSAxOTguMTM4MzA0LDg5LjY2NzQ0MjcgQzIwNi45MzQ1Niw5Mi4xNzMzNDg2IDIxMS41OTAzOTgsOTguMzQyODE2NSAyMTQuMDYwNzA3LDEwMy44MTI5NDQgTDIyMy44OTgxODYsMTA2LjYxMzI3IEMyMjMuODk4MTg2LDEwNi42MTMyNyAyMjIuNTM2NTg3LDg3LjQ3ODIwNDkgMjA1LjI0NjY1Miw4Mi41NTkwOTQ0IFogTTE5NS40ODcwNDIsMTMzLjAwMjA0IEwxMTMuNzY4ODQ3LDExMC4xNTY2OTEgQzExMy43Njg4NDcsMTEwLjE1NjY5MSAxMTQuNjUzNTksMTE0LjY0MTk1OSAxMTguMDQ3OTQ3LDEyMC40NDk1MiBMMTg2Ljg1MDk3MywxMzkuNjgzOTYxIEMxOTIuNTE1NDAzLDEzNi40MDY3NzkgMTk1LjQ4NzA0MiwxMzMuMDAyMDQgMTk1LjQ4NzA0MiwxMzMuMDAyMDQgWiBNMTM4LjgzMTYxNSwxODIuMTc2MDg4IEM3NC4xMjY3MzQ1LDE2NC44MjgzMDcgODEuOTQ5MjU0OCw4Mi4zODU1NTczIDkyLjQxOTMyOSw0My4zMTg5MzU0IEM5Ni43MzAzMTc5LDI3LjIxOTI4NjggMTAxLjE2MjE4OSwxNS4yNTI4NjI2IDEwNC44Mzc2MTcsNy4yMzEzNjc4NiBDMTAyLjY0NDY3MSw2Ljc3OTk0ODgxIDEwMC44Mjg0NjQsNy45MzUwODMyMiA5OS4wMzM3NjM4LDExLjU4NTA3MzYgQzk1LjEzMTQwMywxOS40OTk4NTA0IDkwLjE0MTA5NzgsMzIuMzg2ODM3MiA4NS4zMTE3MjIzLDUwLjQyNzI4MzcgQzc0Ljg0NDYxNDYsODkuNDkzMTYzOSA2Ny4wMjIwOTQyLDE3MS45MzI5NDcgMTMxLjcyNDAwOCwxODkuMjgwNzI4IEMxNjIuMjIxMzA3LDE5Ny40NTEwNjQgMTg1Ljk3OTU3OSwxODUuMDMzNTE4IDIwMy42OTAwMDksMTY1LjUzMjA5NiBDMTg2Ljg3OTE1NCwxODAuNzU4MTI2IDE2NS40MTYxNywxODkuMjk0ODE5IDEzOC44MzE2MTUsMTgyLjE3NjA4OCBaIiBmaWxsPSIjMkQ0NTUyIj48L3BhdGg+CiAgICAgICAgPHBhdGggZD0iTTEwMy4wODE0ODEsMTM4LjU2NDg2OSBMMTAzLjA4MTQ4MSwxMjEuOTI4Mjk0IEw1Ni44NTc4NjA3LDEzNS4wMzU1MzkgQzU2Ljg1Nzg2MDcsMTM1LjAzNTUzOSA2MC4yNzM0Mjc3LDExNS4xOTAwMSA4NC4zODAyNTgsMTA4LjM1MTYwOCBDOTEuNjkxMDY2MywxMDYuMjc5NTQ1IDk3LjkyODc2MjQsMTA2LjI5MzYzNiAxMDMuMDgxNDgxLDEwNy4yODg4NzkgTDEwMy4wODE0ODEsMzkuMDUwOTYgTDEyNi4yMjU2OTksMzkuMDUwOTYgQzEyMy43MDU3MDIsMzEuMjY0MDM3IDEyMS4yNjgwMjUsMjUuMjY4ODQ3OSAxMTkuMjIwNDM1LDIxLjEwMzIxNSBDMTE1LjgzMzQ5NCwxNC4yMDg0NTA5IDExMi4zNjEyNjgsMTguNzc5MDAzOCAxMDQuNDc4Njc3LDI1LjM3MTkzMiBDOTguOTI2OTcxOCwzMC4wMDk5NzE2IDg0Ljg5NTY3ODEsMzkuOTA0NTU1MSA2My43ODEyNTExLDQ1LjU5NDIwMDIgQzQyLjY2NjUyNzMsNTEuMjg3NTUzMyAyNS41OTY0MDU2LDQ5Ljc3NzYzMTggMTguNDc0MTE1LDQ4LjU0NDMzMTYgQzguMzc2OTk3MzUsNDYuODAyMjg1NiAzLjA5NTY4MzcsNDQuNTg0ODY2NiAzLjU4OTc0NTQyLDUyLjI2NDk5NzUgQzQuMDE5NzMxODksNTkuMDM4ODc4OSA1LjYzMzMzMDY2LDY5LjU0MTU4NCA5LjMyOTUyMzQ0LDgzLjQxMjY4OTUgQzE3LjMyNjEwMDEsMTEzLjQ1MTY3MiA0My43NTQwMjY3LDE3MS4zMzI5ODMgOTMuNjk5MzUwOCwxNTcuODgwODg4IEMxMDYuNzQ1Nzg0LDE1NC4zNjU2NDkgMTE1Ljk1NDM3NywxNDcuNDE3NDg4IDEyMi4zMzc0MjksMTM4LjU2MTE2MSBMMTAzLjA4MTQ4MSwxMzguNTYxMTYxIEwxMDMuMDgxNDgxLDEzOC41NjQ4NjkgWiBNMjguNDkyOTkyNiw4My44MjUwMjU2IEw2My45ODc0MTkxLDc0LjQ3NDc4NTEgQzYzLjk4NzQxOTEsNzQuNDc0Nzg1MSA2Mi45NTI4NzA4LDg4LjEyOTM0IDQ5LjY0NjY1MDksOTEuNjM3MTYzNCBDMzYuMzM2NzIzLDk1LjE0MTI3ODcgMjguNDkyOTkyNiw4My44MjUwMjU2IDI4LjQ5Mjk5MjYsODMuODI1MDI1NiBaIiBmaWxsPSIjRTI1NzRDIj48L3BhdGg+CiAgICAgICAgPHBhdGggZD0iTTIzNi42NjQyOSwzOS44NDAwMzQ5IEMyMjcuNDM3ODk5LDQxLjQ1NzQ5IDIwNS4zMDMwMTQsNDMuNDcyNDQ5MSAxNzcuOTQ3OTI1LDM2LjE0MDEzNCBDMTUwLjU4NTQxOSwyOC44MTIyNjg3IDEzMi40MzA3NjQsMTUuOTk2MDMxNyAxMjUuMjM3ODcyLDkuOTcxOTE5NzkgQzExNS4wNDE0NTMsMS40MzE1MTkzIDExMC41NTYxODUsLTQuNTAzNzQ3NTYgMTA2LjE0MjExMiw0LjQ3MzgzMzAzIEMxMDIuMjM5NzUxLDEyLjM5MjI0MzggOTcuMjQ5NDQ2MSwyNS4yNzkyMzA1IDkyLjQxOTMyOSw0My4zMTk2NzcgQzgxLjk1Mjk2MjksODIuMzg1NTU3MyA3NC4xMzA0NDI1LDE2NC44MjUzNCAxMzguODMxNjE1LDE4Mi4xNzMxMjEgQzIwMy41MTk0MzgsMTk5LjUwNjA3IDIzNy45NTc2NjEsMTI0LjE5NTQwMSAyNDguNDI0NzY5LDg1LjEyNTgxMjUgQzI1My4yNTQ4ODYsNjcuMDg5MDc0MSAyNTUuMzcyOTI5LDUzLjQzMDgxMTEgMjU1Ljk1NTgzNiw0NC42MjQxNzIgQzI1Ni42MjAzMiwzNC42NDgwMTEzIDI0OS43Njc4MjgsMzcuNTQ0MDA1IDIzNi42NjQyOSwzOS44NDAwMzQ5IFogTTEwNi42Njc5MTUsNzIuMTYwOTU2NiBDMTA2LjY2NzkxNSw3Mi4xNjA5NTY2IDExNi44NjQzMzQsNTYuMzAyMzMxNyAxMzQuMTU3OTc4LDYxLjIxNzczNDEgQzE1MS40NjI3NDYsNjYuMTMzMTM2NiAxNTIuODAyODM4LDg1LjI2NDQ5MzkgMTUyLjgwMjgzOCw4NS4yNjQ0OTM5IEwxMDYuNjY3OTE1LDcyLjE2MDk1NjYgWiBNMTQ4Ljg4MjY3OCwxNDMuMzIzNzkyIEMxMTguNDYzOTkxLDEzNC40MTMzMjcgMTEzLjc3MjU1NSwxMTAuMTU2NjkxIDExMy43NzI1NTUsMTEwLjE1NjY5MSBMMTk1LjQ4NzA0MiwxMzMuMDAyNzgyIEMxOTUuNDg3MDQyLDEzMi45OTkwNzMgMTc4Ljk5Mjg1NiwxNTIuMTIzMDE1IDE0OC44ODI2NzgsMTQzLjMyMzc5MiBaIE0xNzcuNzczNjQ2LDkzLjQ3NDEzNTYgQzE3Ny43NzM2NDYsOTMuNDc0MTM1NiAxODcuOTU1OTc1LDc3LjYyNjYzNDkgMjA1LjI0NjY1Miw4Mi41NTYxMjggQzIyMi41MzY1ODcsODcuNDc4OTQ2NSAyMjMuODk4MTg2LDEwNi42MTAzMDQgMjIzLjg5ODE4NiwxMDYuNjEwMzA0IEwxNzcuNzczNjQ2LDkzLjQ3NDEzNTYgWiIgZmlsbD0iIzJFQUQzMyI+PC9wYXRoPgogICAgICAgIDxwYXRoIGQ9Ik04Ni45Mjg0MzU4LDEyNi41MDkyMjkgTDU2Ljg1Nzg2MDcsMTM1LjAzMTgzMSBDNTYuODU3ODYwNywxMzUuMDMxODMxIDYwLjEyNDM2MzcsMTE2LjQyMzMxIDgyLjI3NjMwNTYsMTA5LjA0ODcyMyBMNjUuMjQ4OTAwNiw0NS4xNDcwMDgzIEw2My43Nzc1NDMsNDUuNTk0MjAwMiBDNDIuNjYyOTY3Niw1MS4yODgyOTQ5IDI1LjU5Mjg0NTgsNDkuNzc3NjMxOCAxOC40NzA1NTUzLDQ4LjU0NDMzMTYgQzguMzczNTExNzgsNDYuODAzMDI3MyAzLjA5MjE5ODEyLDQ0LjU4NDg2NjYgMy41ODYxODU2OSw1Mi4yNjU3MzkxIEM0LjAxNjI0NjMyLDU5LjAzOTYyMDUgNS42Mjk3NzA5Miw2OS41NDE1ODQgOS4zMjU5NjM3LDgzLjQxMzQzMTEgQzE3LjMyMjYxNDUsMTEzLjQ1MTY3MiA0My43NTA1NDEyLDE3MS4zMzI5ODMgOTMuNjk1NjQyNywxNTcuODgwODg4IEw5NS4xNjcwMDA0LDE1Ny40MTg4NjQgTDg2LjkyODQzNTgsMTI2LjUwOTIyOSBaIE0yOC40OTI5OTI2LDgzLjgyNTc2NzIgTDYzLjk4NzQxOTEsNzQuNDc0Nzg1MSBDNjMuOTg3NDE5MSw3NC40NzQ3ODUxIDYyLjk1Mjg3MDgsODguMTI5MzQgNDkuNjQ2NjUwOSw5MS42MzcxNjM0IEMzNi4zMzY3OTcyLDk1LjE0MTI3ODcgMjguNDkyOTkyNiw4My44MjU3NjcyIDI4LjQ5Mjk5MjYsODMuODI1NzY3MiBaIiBmaWxsPSIjRDY1MzQ4Ij48L3BhdGg+CiAgICAgICAgPHBhdGggZD0iTTE1MC4yNTQ2NiwxNDMuNjU3NTE3IEwxNDguODc4OTcsMTQzLjMyMzA1IEMxMTguNDYwMjgzLDEzNC40MTMzMjcgMTEzLjc2ODg0NywxMTAuMTU2NjkxIDExMy43Njg4NDcsMTEwLjE1NjY5MSBMMTU1LjkwNTc0MSwxMjEuOTM0OTY4IEwxNzguMjE0MTYzLDM2LjIxMTMyODggTDE3Ny45NDQyMTcsMzYuMTQwMTM0IEMxNTAuNTgxNzExLDI4LjgxMjI2ODcgMTMyLjQyNzc5OCwxNS45OTYwMzE3IDEyNS4yMzQxNjQsOS45NzE5MTk3OSBDMTE1LjAzNzc0NSwxLjQzMTUxOTMgMTEwLjU1MjQ3NywtNC41MDM3NDc1NiAxMDYuMTM4NDA0LDQuNDczODMzMDMgQzEwMi4yMzk3NTEsMTIuMzkyMjQzOCA5Ny4yNDk0NDYxLDI1LjI3OTIzMDUgOTIuNDE5MzI5LDQzLjMxOTY3NyBDODEuOTUyOTYyOSw4Mi4zODU1NTczIDc0LjEzMDQ0MjUsMTY0LjgyNTM0IDEzOC44MzE2MTUsMTgyLjE3MjM4IEwxNDAuMTU3NjE3LDE4Mi40NzEyNDkgTDE1MC4yNTQ2NiwxNDMuNjU3NTE3IFogTTEwNi42Njc5MTUsNzIuMTYwOTU2NiBDMTA2LjY2NzkxNSw3Mi4xNjA5NTY2IDExNi44NjQzMzQsNTYuMzAyMzMxNyAxMzQuMTU3OTc4LDYxLjIxNzczNDEgQzE1MS40NjI3NDYsNjYuMTMzMTM2NiAxNTIuODAyODM4LDg1LjI2NDQ5MzkgMTUyLjgwMjgzOCw4NS4yNjQ0OTM5IEwxMDYuNjY3OTE1LDcyLjE2MDk1NjYgWiIgZmlsbD0iIzFEOEQyMiI+PC9wYXRoPgogICAgICAgIDxwYXRoIGQ9Ik04OC40NjA2MDU2LDEyNi4wNzI0MiBMODAuMzk2MzE5OSwxMjguMzYxMDM0IEM4Mi4zMDE1MjA0LDEzOS4xMDEwNTUgODUuNjU5NTM4MiwxNDkuNDA3OTc0IDkwLjkzMDE3MjYsMTU4LjUxMzQ4MyBDOTEuODQ3NTQ2MywxNTguMzExMDIzIDkyLjc1NzUwMzksMTU4LjEzNjc0NCA5My42OTE5MzQ3LDE1Ny44ODA4ODggQzk2LjE0MDczNjUsMTU3LjIyMDExMiA5OC40MTE1NTE2LDE1Ni40MDIxMTQgMTAwLjU5NzgyMywxNTUuNTA5OTU1IEM5NC43MDg2ODQzLDE0Ni43NzA4MDMgOTAuODEyOTk4LDEzNi43MDU2NDkgODguNDYwNjA1NiwxMjYuMDcyNDIgWiBNODUuMzExNzIyMyw1MC40MjgwMjUzIEM4MS4xNjc1OTYxLDY1Ljg5NTA3OTIgNzcuNDYwMjc5MSw4OC4xNTc1MjEyIDc4LjQ4MDczNjgsMTEwLjQ4NzQ1IEM4MC4zMDczMjY1LDEwOS42OTQ2NjcgODIuMjM3MDAwMSwxMDguOTU2MDIyIDg0LjM4MDI1OCwxMDguMzQ3OSBMODUuODczMTIyNCwxMDguMDE0MTc1IEM4NC4wNTMyMDcyLDg0LjE2MjQ1ODkgODcuOTg3NDU3NCw1OS44NTY4NzY2IDkyLjQxOTMyOSw0My4zMTk2NzcgQzkzLjU0Mjg3MDcsMzkuMTM2MjQ1NCA5NC42NjkzNzg5LDM1LjI0NTAwODcgOTUuNzkyMTc5LDMxLjYxNjMwMjYgQzkzLjk4MzM4ODEsMzIuNzY3Mjg0IDkyLjAzNTkxNTcsMzMuOTQ3MTg4MiA4OS44MTc3NTUxLDM1LjE2MjY4OTggQzg4LjMyMTkyNDMsMzkuNzc5OTY0MyA4Ni44MTEyNjEyLDQ0LjgyNjYzMiA4NS4zMTE3MjIzLDUwLjQyODAyNTMgWiIgZmlsbD0iI0MwNEI0MSI+PC9wYXRoPgogICAgPC9nPgo8L3N2Zz4=&logoColor=FFFFFF&label= "Playwright logo")  -->
+<!-- markdownlint-disable-next-line MD013 -->
+![Git logo](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white "Git logo") <!-- markdownlint-disable-next-line MD013 -->
+![GitHub logo](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white "GitHub logo") <!-- markdownlint-disable-next-line MD013 -->
+![GitHub Actions logo](https://img.shields.io/static/v1?style=for-the-badge&message=GitHub+Actions&color=2088FF&logo=GitHub+Actions&logoColor=FFFFFF&label= "GitHub Actions logo") <!-- markdownlint-disable-next-line MD013 -->
+![Prettier logo](https://img.shields.io/static/v1?style=for-the-badge&message=Prettier&color=1a2b34&logo=Prettier&logoColor=F7B93E&label= "Prettier logo") <!-- markdownlint-disable-next-line MD013 -->
+![ESlint logo](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white "ESlint logo") <!-- markdownlint-disable-next-line MD013 -->
+![Stylelint logo](https://img.shields.io/static/v1?style=for-the-badge&message=stylelint&color=263238&logo=stylelint&logoColor=FFFFFF&label= "Stylelint logo") <!-- markdownlint-disable-next-line MD013 -->
+![Lighthouse logo](https://img.shields.io/static/v1?style=for-the-badge&message=Lighthouse&color=F44B21&logo=Lighthouse&logoColor=FFFFFF&label= "Lighthouse logo") <!-- markdownlint-disable-next-line MD013 -->
+![Conventional commits logo](https://img.shields.io/static/v1?style=for-the-badge&message=Conventional+Commits&color=FE5196&logo=Conventional+Commits&logoColor=FFFFFF&label= "Conventional commits logo") <!-- markdownlint-disable-next-line MD013 -->
+![HTML logo](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white "HTML logo") <!-- markdownlint-disable-next-line MD013 -->
+![Normalize.css logo](https://img.shields.io/static/v1?style=for-the-badge&message=Normalize.css&color=E3695F&logo=Normalize.css&logoColor=FFFFFF&label= "Normalize.css logo") <!-- markdownlint-disable-next-line MD013 -->
+![Npm logo](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white "Npm logo") <!-- markdownlint-disable-next-line MD013 -->
+![Commitlint logo](https://img.shields.io/static/v1?style=for-the-badge&message=commitlint&color=000000&logo=commitlint&logoColor=FFFFFF&label= "Commitlint logo") <!-- markdownlint-disable-next-line MD013 -->
+![Pre commit logo](https://img.shields.io/static/v1?style=for-the-badge&message=pre-commit&color=222222&logo=pre-commit&logoColor=FAB040&label= "Pre commit logo") <!-- markdownlint-disable-next-line MD013 -->
+![Editorconfig logo](https://img.shields.io/static/v1?style=for-the-badge&message=EditorConfig&color=e0efef&logo=EditorConfig&logoColor=000&label= "Editorconfig logo") <!-- markdownlint-disable-next-line MD013 -->
+![Markdown logo](https://img.shields.io/static/v1?style=for-the-badge&message=Markdown&color=000000&logo=Markdown&logoColor=FFFFFF&label= "Markdown logo") <!-- markdownlint-disable-next-line MD013 -->
+![PowerShell logo](https://img.shields.io/badge/powershell-5391FE?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwLDAsMjU2LDI1NiIgd2lkdGg9IjUwcHgiIGhlaWdodD0iNTBweCI+PGcgZmlsbD0iI2ZmZmZmZiIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PGcgdHJhbnNmb3JtPSJzY2FsZSg1LjEyLDUuMTIpIj48cGF0aCBkPSJNMjkuMTcxODgsNi4wMDc4MWMtNS4zOTUzOSwwLjAwMiAtMTAuNzkxMTIsLTAuMDEwMTUgLTE2LjE4OTQ1LDAuMDA1ODZjLTEuODQ4MDMsMC4wMDUyNSAtMy4yOTE1LDAuMjQ4NzkgLTQuMzk2NDgsMS4xMjY5NWMtMS4xMDQ5OSwwLjg3ODE2IC0xLjY2NzU5LDIuMjI5ODcgLTIuMDg1OTQsNC4wMzUxNmMtMi4wOTAyOSw5LjAxNDI0IC00LjE2NDM4LDE4LjAzMzkgLTYuMjI2NTYsMjcuMDU0NjljLTAuNDA2MDQsMS43NzI1MSAtMC40NDk3NywzLjI1ODAxIDAuNDM3NSw0LjM1MzUyYzAuODg3MjcsMS4wOTU1MSAyLjM1NDYyLDEuMzg0MjUgNC4yMzA0NywxLjM5MDYzYzEwLjc5NDQxLDAuMDM2MDEgMjEuNTg5MDIsMC4wMzIwMSAzMi4zODI4MSwwYzEuNjY4NTIsLTAuMDA0OSAzLjA3MzI3LC0wLjMzNTU0IDQuMTUyMzQsLTEuMTc3NzNjMS4wNzkwNywtMC44NDIxOSAxLjcyNTUzLC0yLjEyMjAzIDIuMDg3ODksLTMuNzA4OThjMi4wOTg0NCwtOS4yMDM5MiA0LjE2OTYsLTE4LjQxNTQ5IDYuMTk1MzEsLTI3LjYzNjcyYzAuMzcwMTQsLTEuNjg2MjcgMC4zOTgzNCwtMy4wOTU1MiAtMC40NTExNywtNC4xMzQ3N2MtMC44NDk1MSwtMS4wMzkyNSAtMi4yMjkwOCwtMS4yOTc3NCAtMy45NDMzNiwtMS4zMDQ2OWMtNS40MDE2OSwtMC4wMjIwMiAtMTAuNzk5MDksLTAuMDA1OTEgLTE2LjE5MzM2LC0wLjAwMzkxek0yOS4xNzM4Myw4LjAwNzgxYzUuMzk3NzMsLTAuMDAyIDEwLjc5MTI5LC0wLjAxODA4IDE2LjE4MzU5LDAuMDAzOTFjMS40OTM3MiwwLjAwNjA1IDIuMTcwNiwwLjI4NjgxIDIuNDAyMzQsMC41NzAzMWMwLjIzMTc0LDAuMjgzNSAwLjM2Nzc0LDAuOTc5NjcgMC4wNDY4OCwyLjQ0MTQxYy0yLjAyNDE2LDkuMjE0MTUgLTQuMDk1OTQsMTguNDIxNjMgLTYuMTkzMzYsMjcuNjIxMDljLTAuMzAxNjMsMS4zMTk3MyAtMC43NDg2LDIuMDkxNDIgLTEuMzY3MTksMi41NzQyMmMtMC42MTg5MywwLjQ4MzA2IC0xLjUxNjI2LDAuNzUxNzMgLTIuOTI3NzMsMC43NTU4NmMtMTAuNzkwMjEsMC4wMzIgLTIxLjU4MTUsMC4wMzU5OSAtMzIuMzcxMDksMGMtMS42NTIxOSwtMC4wMDU2MiAtMi40MTMxNiwtMC4zMTY5NCAtMi42ODE2NCwtMC42NDg0NGMtMC4yNjg0OCwtMC4zMzE0OSAtMC4zOTU5NywtMS4xMDA5IC0wLjA0MTAyLC0yLjY1MDM5YzIuMDYxODIsLTkuMDE5MjEgNC4xMzI5NCwtMTguMDM3MDcgNi4yMjI2NiwtMjcuMDQ4ODNjMC4zNzc2NiwtMS42Mjk3MSAwLjgxMDgsLTIuNDY1MzMgMS4zODI4MSwtMi45MTk5MmMwLjU3MjAxLC0wLjQ1NDU5IDEuNDg4MjMsLTAuNjg4NjEgMy4xNTgyLC0wLjY5MzM2YzUuMzkxNjYsLTAuMDE1OTkgMTAuNzg2OTQsLTAuMDAzODYgMTYuMTg1NTUsLTAuMDA1ODZ6TTE5LjI2OTUzLDExLjAwNTg2Yy0wLjYzNDUsLTAuMDQ3MzcgLTEuMjg0LDAuMjE2ODggLTEuOTM3NSwwLjc5Njg4Yy0xLjMyMywxLjE3NCAtMC45NzExNCwyLjMyODU4IDAuMTMwODYsMy41MTc1OGMyLjQwNywyLjU5OSA0LjYzMjUsNS4xNDExNCA3LjA2MjUsNy44NjkxNGMwLjQxNywwLjQ2NSAwLjkyMzI1LDEuMDQ1NDIgMS41MzEyNSwxLjczMjQyYy0wLjQ2MiwwLjM0NSAtMS4xOTIyNCwwLjkwNzQ1IC0xLjc0MDIzLDEuMzE0NDVjLTMuOTMxLDIuOTI3IC03Ljg3ODk4LDUuODMzNTYgLTExLjgzMzk4LDguNzI2NTZjLTEuMTA2LDAuODA5IC0yLjA5MTM5LDEuNjY4MjggLTEuMDI1MzksMy4xMTMyOGMwLjk2NywxLjMxIDIuMTA4NjksMS4wODgxNyAzLjMwNDY5LDAuMjAxMTdjNS4zMjMsLTMuOTQ1IDEwLjY1MDc3LC03Ljg4NDMgMTYuMDA5NzcsLTExLjc3OTNjMS4zOTYsLTEuMDE1IDEuNjkxODMsLTEuOTQ1NDUgMC40MjM4MywtMy4zMTQ0NWMtMy4zOTUsLTMuNjY2IC02LjczMjI3LC03LjM4NjUyIC0xMC4wNzIyNywtMTEuMTAzNTJjLTAuNTk5NSwtMC42Njc1IC0xLjIxOTAyLC0xLjAyNjg0IC0xLjg1MzUyLC0xLjA3NDIyek0yMi43NSwzNGMtMS4xMjUsMCAtMS43NSwxIC0xLjc1LDJjMCwxIDAuNjI1LDIgMS43NSwyaDkuNWMxLjEyNSwwIDEuNzUsLTEgMS43NSwtMmMwLC0xIC0wLjYyNSwtMiAtMS43NSwtMnoiPjwvcGF0aD48L2c+PC9nPjwvc3ZnPg==&logoColor=white "PowerShell logo") <!-- markdownlint-disable-next-line MD013 -->
+![Visual Studio Code logo](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwLDAsMjU2LDI1NiIgd2lkdGg9IjMwcHgiIGhlaWdodD0iMzBweCI+PGcgZmlsbD0iI2ZmZmZmZiIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PGcgdHJhbnNmb3JtPSJzY2FsZSg4LjUzMzMzLDguNTMzMzMpIj48cGF0aCBkPSJNMjcuMzI0LDQuODA0bC00Ljc1LC0xLjYyNWMtMC4zMTUsLTAuMTA4IC0wLjY2NywtMC4wNTEgLTAuOTMyLDAuMTUybC0xMC43MDgsOC4yMWwtNS40MTcsLTMuMjcxYy0wLjI3OCwtMC4xNjkgLTAuNjIsLTAuMTkyIC0wLjkxOCwtMC4wNjFsLTIsMC44NzVjLTAuMzY0LDAuMTU5IC0wLjU5OSwwLjUxOSAtMC41OTksMC45MTZ2MTBjMCwwLjM5NyAwLjIzNSwwLjc1NyAwLjU5OSwwLjkxNmwyLDAuODc1YzAuMjk3LDAuMTMxIDAuNjM5LDAuMTA3IDAuOTE4LC0wLjA2MWw1LjQxNiwtMy4yNzFsMTAuNzA4LDguMjFjMC4xNzcsMC4xMzYgMC4zOTIsMC4yMDYgMC42MDgsMC4yMDZjMC4xMDksMCAwLjIxOCwtMC4wMTggMC4zMjQsLTAuMDU0bDQuNzUsLTEuNjI1YzAuNDA1LC0wLjEzOCAwLjY3NywtMC41MTggMC42NzcsLTAuOTQ2di0xOC41YzAsLTAuNDI4IC0wLjI3MiwtMC44MDggLTAuNjc2LC0wLjk0NnpNNiwxNi43NjZ2LTMuNTMybDIuOTIzLDEuNzY2ek0yMiwxOS43MTdsLTYuOTYyLC00LjcxN2w2Ljk2MiwtNC43MTd6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4=&logoColor=white "Visual Studio Code logo") <!-- markdownlint-disable-next-line MD013 -->
+![Windows logo](https://img.shields.io/static/v1?style=for-the-badge&message=Windows&color=0078D6&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwLDAsMjU2LDI1NiIgd2lkdGg9IjUwcHgiIGhlaWdodD0iNTBweCI+PGcgZmlsbD0iI2ZmZmZmZiIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PGcgdHJhbnNmb3JtPSJzY2FsZSg1LjEyLDUuMTIpIj48cGF0aCBkPSJNMTkuODUyLDcuNzYxbC0xNSwyLjI1Yy0wLjQ5LDAuMDc0IC0wLjg1MiwwLjQ5NCAtMC44NTIsMC45ODl2MTJjMCwwLjU1MyAwLjQ0OCwxIDEsMWgxNWMwLjU1MiwwIDEsLTAuNDQ3IDEsLTF2LTE0LjI1YzAsLTAuMjkxIC0wLjEyNywtMC41NjcgLTAuMzQ4LC0wLjc1OGMtMC4yMiwtMC4xODkgLTAuNTEzLC0wLjI3MSAtMC44LC0wLjIzMXpNNDUuNjUyLDQuMjQyYy0wLjIyLC0wLjE4OSAtMC41MTIsLTAuMjcxIC0wLjgwMSwtMC4yMzFsLTIxLDMuMTVjLTAuNDg5LDAuMDc0IC0wLjg1MSwwLjQ5NCAtMC44NTEsMC45ODl2MTQuODVjMCwwLjU1MyAwLjQ0OCwxIDEsMWgyMWMwLjU1MiwwIDEsLTAuNDQ3IDEsLTF2LTE4YzAsLTAuMjkxIC0wLjEyNywtMC41NjcgLTAuMzQ4LC0wLjc1OHpNMjAsMjZoLTE1Yy0wLjU1MiwwIC0xLDAuNDQ3IC0xLDF2MTJjMCwwLjQ5NSAwLjM2MiwwLjkxNSAwLjg1MiwwLjk4OWwxNSwyLjI1YzAuMDUsMC4wMDcgMC4wOTksMC4wMTEgMC4xNDgsMC4wMTFjMC4yMzgsMCAwLjQ3LC0wLjA4NSAwLjY1MiwtMC4yNDJjMC4yMjEsLTAuMTkxIDAuMzQ4LC0wLjQ2NyAwLjM0OCwtMC43NTh2LTE0LjI1YzAsLTAuNTUzIC0wLjQ0OCwtMSAtMSwtMXpNNDUsMjZoLTIxYy0wLjU1MiwwIC0xLDAuNDQ3IC0xLDF2MTQuODVjMCwwLjQ5NSAwLjM2MiwwLjkxNSAwLjg1MiwwLjk4OWwyMSwzLjE1YzAuMDQ5LDAuMDA3IDAuMDk5LDAuMDExIDAuMTQ4LDAuMDExYzAuMjM4LDAgMC40NywtMC4wODUgMC42NTIsLTAuMjQyYzAuMjIxLC0wLjE5MSAwLjM0OCwtMC40NjcgMC4zNDgsLTAuNzU4di0xOGMwLC0wLjU1MyAtMC40NDgsLTEgLTEsLTF6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4=&logoColor=FFFFFF&label= "Windows logo") <!-- markdownlint-disable-next-line MD013 -->
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 👨‍💻 ¿Querés probar el proyecto?
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clona el repositorio:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```bash
+    git clone https://github.com/GaleedGutierrez/Curso-de-React-js-2023.git
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Ingresa a la capeta `Curso-de-React-js-2023`:
 
-## Learn More
+    ```bash
+    cd ./Curso-de-React-js-2023
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Instala las dependencias:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```bash
+    npm install
+    ```
 
-### Code Splitting
+4. Corre el proyecto en tu entorno de desarrollo local:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    ```bash
+    npm run dev
+    ```
 
-### Analyzing the Bundle Size
+5. Abre tu navegador e ingresa a:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    ```bash
+    http://localhost:5173
+    ```
 
-### Making a Progressive Web App
+¡Listo! Ahora puedes ver el proyecto y modificarlo a tu gusto. 😄
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📄 Licencia
 
-### Advanced Configuration
+Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](
+https://github.com/GaleedGutierrez/Curso-de-React-js-2023/blob/main/LICENSE
+)
+para más detalles.
+<!-- markdownlint-disable-next-line MD013 -->
+[![License logo](https://img.shields.io/badge/MIT-ff2828?style=for-the-badge&label=License "License logo")](https://github.com/GaleedGutierrez/Curso-de-React-js-2023/blob/main/LICENSE "License logo")
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## ✒️ Autor
 
-### Deployment
+Este proyecto fue creado por [Galeed Gutierrez](https://galeedgutierrez.com/).
+Si te gustó, podes dejarme una estrella ⭐ o un comentario 💬.
+También podes seguirme en mis redes 🌐.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+El proyecto se baso en el diseño propocionado por [Frontend Mentor](
+https://www.frontendmentor.io/ "Frontend Mentor").
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔗 Redes Sociales
+<!-- markdownlint-disable-next-line MD013 -->
+[![Ir al Linkedin de Galeed Gutierrez](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white "Ir al Linkedin de Galeed Gutierrez")](https://www.linkedin.com/in/galeedgutierrez/ "Ir al Linkedin de Galeed Gutierrez") <!-- markdownlint-disable-next-line MD013 -->
+[![Ir al Twitter de Galeed Gutierrez](https://img.shields.io/static/v1?style=for-the-badge&message=Twitter&color=000&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICAgIDxzdHlsZT4KICAgICAgICBwYXRoIHsKICAgICAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgICB9CiAgICA8L3N0eWxlPgogICAgPHBhdGgKICAgICAgICBkPSJNMzg5LjIgNDhoNzAuNkwzMDUuNiAyMjQuMiA0ODcgNDY0SDM0NUwyMzMuNyAzMTguNiAxMDYuNSA0NjRIMzUuOEwyMDAuNyAyNzUuNSAyNi44IDQ4SDE3Mi40TDI3Mi45IDE4MC45IDM4OS4yIDQ4ek0zNjQuNCA0MjEuOGgzOS4xTDE1MS4xIDg4aC00MkwzNjQuNCA0MjEuOHoiIC8+Cjwvc3ZnPg==&logoColor=FFFFFF&label= "Ir al Twitter de Galeed Gutierrez")](https://x.com/GutierrezGaleed "Ir al Twitter de Galeed Gutierrez") <!-- markdownlint-disable-next-line MD013 -->
+[![Ir al Instagram de Galeed Gutierrez](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white "Ir al Instagram de Galeed Gutierrez")](https://www.instagram.com/galeedgutierrez/ "Ir al Instagram de Galeed Gutierrez") <!-- markdownlint-disable-next-line MD013 -->
+[![Ir al Facebook de Galeed Gutierrez](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white "Ir al Facebook de Galeed Gutierrez")](https://www.facebook.com/galeedgutierrez/ "Ir al Facebook de Galeed Gutierrez") <!-- markdownlint-disable-next-line MD013 -->

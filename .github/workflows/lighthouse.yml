@@ -1,4 +1,4 @@
-name: 📈 Performance check (Lighthouse)
+name: 🗼 Lighthouse
 on: [push]
 jobs:
     lighthouseci:

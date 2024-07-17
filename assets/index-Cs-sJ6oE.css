@@ -165,15 +165,15 @@
 
 @font-face {
 	font-family: "Josefin Sans";
-	src: url("./assets/JosefinSans-Regular-DBz8fEWi.eot");
+	src: url("./JosefinSans-Regular-DBz8fEWi.eot");
 	src:
 		local("Josefin Sans Regular"),
 		local("JosefinSans-Regular"),
-		url("./assets/JosefinSans-Regular-DBz8fEWi.eot?#iefix")
+		url("./JosefinSans-Regular-DBz8fEWi.eot?#iefix")
 			format("embedded-opentype"),
-		url("./assets/JosefinSans-Regular-D1syo6e1.woff2") format("woff2"),
-		url("./assets/JosefinSans-Regular-C7L6PwXi.woff") format("woff"),
-		url("./assets/JosefinSans-Regular-Bz7vV-7C.ttf") format("truetype");
+		url("./JosefinSans-Regular-D1syo6e1.woff2") format("woff2"),
+		url("./JosefinSans-Regular-C7L6PwXi.woff") format("woff"),
+		url("./JosefinSans-Regular-Bz7vV-7C.ttf") format("truetype");
 	font-style: normal;
 	font-weight: normal;
 	font-display: swap;
@@ -181,15 +181,15 @@
 
 @font-face {
 	font-family: "Josefin Sans";
-	src: url("./assets/JosefinSans-Bold-BJeMBHFB.eot");
+	src: url("./JosefinSans-Bold-BJeMBHFB.eot");
 	src:
 		local("Josefin Sans Bold"),
 		local("JosefinSans-Bold"),
-		url("./assets/JosefinSans-Bold-BJeMBHFB.eot?#iefix")
+		url("./JosefinSans-Bold-BJeMBHFB.eot?#iefix")
 			format("embedded-opentype"),
-		url("./assets/JosefinSans-Bold-BISt1-gG.woff2") format("woff2"),
-		url("./assets/JosefinSans-Bold-zM5qM4KX.woff") format("woff"),
-		url("./assets/JosefinSans-Bold-BfZHpRkR.ttf") format("truetype");
+		url("./JosefinSans-Bold-BISt1-gG.woff2") format("woff2"),
+		url("./JosefinSans-Bold-zM5qM4KX.woff") format("woff"),
+		url("./JosefinSans-Bold-BfZHpRkR.ttf") format("truetype");
 	font-style: normal;
 	font-weight: bold;
 	font-display: swap;
@@ -630,22 +630,22 @@ s::after {
 }
 
 .background-app.light {
-	background-image: url("./assets/bg-mobile-light-eXTHhUPU.jpg");
+	background-image: url("./bg-mobile-light-eXTHhUPU.jpg");
 }
 
 @media screen and (width >= 48rem) {
 	.background-app.light {
-		background-image: url("./assets/bg-desktop-light-BIdKokTn.jpg");
+		background-image: url("./bg-desktop-light-BIdKokTn.jpg");
 	}
 }
 
 .background-app.dark {
-	background-image: url("./assets/bg-mobile-dark-DBhZPurk.jpg");
+	background-image: url("./bg-mobile-dark-DBhZPurk.jpg");
 }
 
 @media screen and (width >= 48rem) {
 	.background-app.dark {
-		background-image: url("./assets/bg-desktop-dark-DzAvO98h.jpg");
+		background-image: url("./bg-desktop-dark-DzAvO98h.jpg");
 	}
 }
 

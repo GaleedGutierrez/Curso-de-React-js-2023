@@ -38,7 +38,7 @@
 			"@context/*": ["src/context/*"]
 		}
 	},
-	"include": ["./**/*.ts", "./**/*.tsx"],
+	"include": ["./**/*.ts", "./**/*.tsx", "src/utils/googleAnalytics.js"],
 	"exclude": ["node_modules"],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }

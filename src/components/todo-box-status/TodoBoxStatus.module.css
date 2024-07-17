@@ -26,14 +26,17 @@
 	position: absolute;
 	inset-inline: 0;
 	inset-block-start: calc(6rem + var(--space-4));
-	display: flex;
-	gap: var(--space-4);
-	justify-content: center;
-	inline-size: 100%;
 	padding-block: var(--space-4);
 	border-radius: var(--border-radius-1);
 	background-color: var(--background-color-1);
 	box-shadow: var(--shadow-1);
+}
+
+.m-box-status__filters--container {
+	display: flex;
+	gap: var(--space-4);
+	justify-content: center;
+	inline-size: 100%;
 }
 
 .m-box-status__filters .m-box-status__filter {

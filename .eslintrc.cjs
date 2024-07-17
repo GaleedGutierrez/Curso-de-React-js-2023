@@ -315,17 +315,17 @@ module.exports = {
 		// },
 
 		// Testing: Playwright
-		// {
-		// 	files: ['*.spec.ts', '*.spec.tsx'],
-		// 	extends: ['plugin:playwright/recommended'],
-		// 	rules: {
-		// 		'playwright/prefer-equality-matcher': 'error',
-		// 		'playwright/prefer-comparison-matcher': 'error',
-		// 		'playwright/prefer-hooks-in-order': 'error',
-		// 		'playwright/prefer-hooks-on-top': 'error',
-		// 		'playwright/no-page-pause': 'error',
-		// 	},
-		// },
+		{
+			files: ['*.spec.ts', '*.spec.tsx'],
+			extends: ['plugin:playwright/recommended'],
+			rules: {
+				'playwright/prefer-equality-matcher': 'error',
+				'playwright/prefer-comparison-matcher': 'error',
+				'playwright/prefer-hooks-in-order': 'error',
+				'playwright/prefer-hooks-on-top': 'error',
+				'playwright/no-page-pause': 'error',
+			},
+		},
 
 		// Testing: Cypress
 		// {

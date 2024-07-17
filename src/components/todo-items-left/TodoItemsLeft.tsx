@@ -5,5 +5,7 @@ interface Props {
 }
 
 export const TodoItemsLeft: FC<Props> = ({ itemLefts }) => (
-	<p className="text-color-2">{itemLefts} items left</p>
+	<p className="text-color-2">
+		{itemLefts} {itemLefts === 1 ? 'item' : 'items'} left
+	</p>
 );

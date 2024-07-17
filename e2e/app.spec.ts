@@ -34,6 +34,7 @@ async function markTask({
 }): Promise<void> {
 	const ITEM = page
 		.getByRole('listitem')
+		.filter({ hasNot: page.getByRole('link') })
 		.filter({ hasText: TODO_ITEMS_LIST[taskNumber] })
 		.locator('label');
 
@@ -52,7 +53,10 @@ test.describe('Check CRUD', () => {
 	test('Should add todos', async ({ page }) => {
 		await addTodos(page);
 
-		const TODO_ITEMS = page.getByRole('listitem');
+		const TODO_ITEMS = page
+			.getByRole('listitem')
+			.filter({ hasNot: page.getByRole('link') });
+
 		const AMOUNT_TODOS = await TODO_ITEMS.count();
 
 		await expect(TODO_ITEMS).toHaveText(TODO_ITEMS_LIST);
@@ -81,7 +85,10 @@ test.describe('Check CRUD', () => {
 			.click();
 
 		const ITEMS_LEFT = page.getByText('items left');
-		const AMOUNT_TODOS = await page.getByRole('listitem').count();
+		const AMOUNT_TODOS = await page
+			.getByRole('listitem')
+			.filter({ hasNot: page.getByRole('link') })
+			.count();
 
 		expect(AMOUNT_TODOS).toBe(TODO_ITEMS_LIST.length - 1);
 		await expect(ITEMS_LEFT).toHaveText('2 items left');
@@ -141,7 +148,10 @@ test.describe('Check clear completed', () => {
 		await page.getByText('Clear completed').click();
 		await expect(ITEMS_LEFT).toHaveText('1 item left');
 
-		const AMOUNT_TODOS = await page.getByRole('listitem').count();
+		const AMOUNT_TODOS = await page
+			.getByRole('listitem')
+			.filter({ hasNot: page.getByRole('link') })
+			.count();
 
 		expect(AMOUNT_TODOS).toBe(1);
 	});
@@ -156,7 +166,10 @@ test.describe('Check persistence', () => {
 		await page.reload();
 
 		const ITEMS_LEFT = page.getByText('items left');
-		const AMOUNT_TODOS = await page.getByRole('listitem').count();
+		const AMOUNT_TODOS = await page
+			.getByRole('listitem')
+			.filter({ hasNot: page.getByRole('link') })
+			.count();
 		const TODO_COMPLETED = page
 			.getByRole('listitem')
 			.filter({ hasText: TODO_ITEMS_LIST[TASK_NUMBER] })
@@ -189,7 +202,10 @@ test.describe('Check filters', () => {
 		await page.getByText('Completed', { exact: true }).click();
 		await expect(page).toHaveURL('/#completed');
 
-		const COMPLETED_TASK = await page.getByRole('listitem').count();
+		const COMPLETED_TASK = await page
+			.getByRole('listitem')
+			.filter({ hasNot: page.getByRole('link') })
+			.count();
 
 		expect(COMPLETED_TASK).toBe(2);
 	});
@@ -205,7 +221,10 @@ test.describe('Check filters', () => {
 		await page.getByText('All', { exact: true }).click();
 		await expect(page).toHaveURL('/#all');
 
-		const AMOUNT_TODOS = await page.getByRole('listitem').count();
+		const AMOUNT_TODOS = await page
+			.getByRole('listitem')
+			.filter({ hasNot: page.getByRole('link') })
+			.count();
 
 		expect(AMOUNT_TODOS).toBe(TODO_ITEMS_LIST.length);
 	});
